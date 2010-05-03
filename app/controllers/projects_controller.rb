@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
   # GET /projects.xml
   def index
     @user = User.find(session[:user_id])    
-    @projects = @user.projects.all
+    @projects = @user.projects.all(:order => :rate)
 
     respond_to do |format|
       format.html # index.html.erb
