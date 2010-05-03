@@ -10,20 +10,35 @@ class ProjectsController < ApplicationController
 
     @project = @user.projects.find(params[:id])
     @project.archive = true
+    
     if @project.save
       
-      flash[:notice] = 'Project was successfully archived.'
-      format.html { redirect_to('/') }
-      format.xml  { render :xml => @project, :status => :created, :location => @project }
+      #flash[:notice] = 'Project was successfully archived.'
+      respond_to do |format|
+      
+        format.html { redirect_to('/') }
+      end
+    end
+  end
+  
+  
+  def archived
+    @user = User.find(session[:user_id])    
+    @projects = @user.projects.all(:conditions => [" archive = 1 "])
+    
+    respond_to do |format|
+      format.html { render :template => 'projects/index' }
+      format.xml  { render :xml => @projects }
     end
   end
   
   def index
     @user = User.find(session[:user_id])    
-    @projects = @user.projects.all
+    @projects = @user.projects.all(:conditions => [" archive = 0 || archive IS NULL "])
+    
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.xml  { render :xml => @projects }
     end
   end
