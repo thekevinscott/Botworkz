@@ -2,7 +2,7 @@
 
 	<h1><%=h @project.title %></h1>
 	<p>Due: <%=h @project.duedate %></p>
-	<p>Client: <%=h @project.client_id %></p>
+	<p>Client: <%=h Client.find(@project.client_id).name %></p>
 
 
 
@@ -21,6 +21,10 @@
 			e.preventDefault();
 			
 		});
+		$(document).ready(function(){
+			$('#comments, #windows-tabs li#tab-comments').addClass('selected');			
+		});
+
 	</script>
 	
 		
@@ -43,7 +47,7 @@
 <script type="text/javascript">
 
 
-
+/*
 $(document).ready(function() {
 	
   $(document).keyup(function(event){
@@ -53,6 +57,10 @@ $(document).ready(function() {
       autosaver       = setTimeout(   "Save()",5000 );    // wait 2 seconds after typing to save
     }
   });	
+
+
+
+
   $('#content-rev').click(function(e) {
     e.preventDefault();
     rev_id            = $('#content-rev a')[0].innerHTML;
@@ -62,10 +70,8 @@ $(document).ready(function() {
     if (rev_id < latest_rev_id) { next_rev_id = " Rev " + (rev_id + 1) + ">>";} else { next_rev_id = ''; }    
     $('#content-rev')[0].innerHTML = "<a href='javascript:;'>"+last_rev_id+"</a> | <a href='javascript:;'>" + next_rev_id+"</a>";
   });
-  
-  //var timer = timerClass;
-  //timer.init();
-  //timer.project	=	'<?=$project['web_link']?>';
+
+
 });
 
 var autosaver;
@@ -85,7 +91,7 @@ function updateRevID(rev_id)
   $('#content-rev a')[0].innerHTML = "Rev: " + rev_id;
   latest_rev_id = rev_id;
 }
-
+*/
 </script>
 
 
