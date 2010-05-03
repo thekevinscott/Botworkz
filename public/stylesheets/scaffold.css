@@ -283,17 +283,17 @@ width:50px;
 
 table {
 	width: 100%;
-}
-table, table td {
-	border: 1px solid #CCC;
+	margin: 20px 0;
 }
 table td {
+	border: 1px solid #CCC;
 	padding: 10px 20px;
 	text-align: center;
 }
 table th {
 	padding: 10px;
-	border: 1px solid #CCC;
+	border: 1px solid #AAA;
 	font-weight: bold;
 	text-align: center;
+	background: #DDD;
 }
