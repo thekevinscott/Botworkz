@@ -60,7 +60,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.save
         
-        @project.notes.new({:client_id => @client.id, :user_id => @user.id }).save
+        @project.notes.new({:client_id => @client.id, :user_id => @user.id, :rev => 1 }).save
         
         
         flash[:notice] = 'Project was successfully created.'

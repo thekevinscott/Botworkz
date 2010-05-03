@@ -2,10 +2,14 @@
 
 	$.project = function(){
 		
-		var autosaver, old_form_contents;
+		var autosaver;
+		var old_form_contents = $('#content').val();
 		var save = function(e){
 			if (e&&e.preventDefault) { e.preventDefault(); }
 			
+			$.post('/notes/new',{project_id:$('#project').attr('rel'),content:$('#content').val()},function(data){
+				trace(data);
+			});
 		}
 		
 		$('#save').click(save);
@@ -13,18 +17,22 @@
 
 		$(document).keyup(function(){
 			clearInterval($.project.autosaver);
-			var content = $("#content").serialize();
-			if (old_form_contents != content) // if there is a change
-			{
-				old_form_contents = content;
-  				$.project.autosaver = setTimeout($.project.save,1000 );    // wait 2 seconds after typing to save
-			}
+			$.project.autosaver = setTimeout(function(){
+				var content = $("#content").val();
+				if (old_form_contents != content) // if there is a change
+				{
+					old_form_contents = content;
+					$.project.save();
+				}
+				
+			},1000 );    // wait 2 seconds after typing to save
 		});
 
 		
 		return {
 			save : save,
-			autosaver: autosaver
+			autosaver: autosaver,
+			old_form_contents: old_form_contents
 		}
 	}();
 }(jQuery));

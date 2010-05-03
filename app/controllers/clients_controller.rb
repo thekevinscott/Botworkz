@@ -1,6 +1,6 @@
 class ClientsController < ApplicationController
   before_filter :login_required
-  @user = User.find(session[:user_id])
+
   
   # GET /clients
   # GET /clients.xml

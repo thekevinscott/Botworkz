@@ -25,12 +25,20 @@ class NotesController < ApplicationController
   # GET /notes/new
   # GET /notes/new.xml
   def new
-    @note = Note.new
+    @user = User.find(session[:user_id])
+    @project = @user.projects.find(params[:project_id])
+    if ! @project.nil?
+      @rev = @project.notes.last.rev + 1
+      @note = @project.notes.new({ :content => params[:content], :rev => @rev })
+      @note.save
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @note }
+
+
+      respond_to do |format|
+        format.js  { render :json => @note }
+      end
     end
+
   end
 
   # GET /notes/1/edit
