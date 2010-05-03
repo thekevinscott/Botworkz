@@ -36,7 +36,7 @@ class ClientsController < ApplicationController
     @client = Client.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { redirect_to('/clients/') }
       format.xml  { render :xml => @client }
     end
   end
