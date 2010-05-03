@@ -83,3 +83,218 @@ input#remember {
   margin-left: 8px;
   margin-top: 9px;
 }
+
+
+
+#botworks {
+	float: left;
+}
+
+#username {
+	float: right;
+}
+
+h1 {
+	font-size: 110%;
+	font-weight: normal;
+	font-family: "HelveticaNeue-Light","HelveticaNeue",Helvetica,Arial,sans-serif;
+	margin: 0;
+}
+
+#information {
+	margin-bottom: 20px;
+	height: 20px;
+	padding: 20px;
+}
+
+#add {
+	margin: 20px 0;
+}
+
+#projects #add p {
+	height: 10px;
+	width: 100px;
+	padding: 10px;
+	background: #CECECE;
+	border: 1px solid #CCC;
+	margin: 0 auto;
+	color: white;
+}
+
+#projects-list {
+	border: 2px solid #EEEEEE;
+	padding: 20px;
+	text-align: left;
+}
+
+#projects-list .actions { float: right; }
+
+#projects ul {
+	padding: 0; margin: 0;
+}
+
+#projects li { 
+	text-align: left;
+	list-style: none;
+	height: 113px;
+	background: url(/images/button-overlay.png) no-repeat;
+	background-color: #CCC;
+	margin: 0 0 20px;
+}
+
+#projects li .project-cont {
+  padding: 20px;
+}
+
+#projects li a {
+  display: block;
+  height: 100%;
+  widows: 100%;
+}
+
+/* SINGLE PROJECT - SHOW */
+
+#project {
+  margin: 40px;
+  text-align: left;  
+  padding: 20px;
+	background: #f6f6f6;  
+	border: 1px solid #CCC;
+	border-bottom: 1px solid #999;
+	border-right: 1px solid #999;
+	position: relative;
+}
+#project a {
+  text-decoration: none;
+  color: #2e0e59;
+  padding: 3px;
+}
+#project a:hover {
+  background: #CCC;
+}
+#project #edit-this {
+  float: right;
+  font-size: 80%;
+}
+#project h1 {
+  font-size: 20px;
+  color: #000e4a;
+	text-shadow: #6374AB -2px 2px 4px;
+	display: inline;
+	border-bottom: 2px solid #D3D9E9;
+}
+#project ul, li {
+  margin: 0; padding: 0;
+}
+#project #clients {
+  margin-top: 10px;
+  font-size: 80%;
+  height: 12px;
+}
+#project li {
+  list-style-type: none;
+}
+#project label {
+  padding: 5px 0;
+  text-align: left;
+  display: inline;
+  margin: 15px 0 0 0;
+}
+#project .text-container {
+  background: white;
+  padding:13px 0 0 12px;
+  width:673px;
+	border: 2px solid #CCC;
+}
+#project textarea {
+  border: none;
+	width: 100%;
+}
+#project input.submit {
+  width: 150px;
+}
+#project #content-rev {
+background:#EEEEEE none repeat scroll 0 0;
+border-bottom:1px solid #DDD;
+color:#CCCCCC;
+font-size:80%;
+padding-top:1px;
+position:absolute;
+right:30px;
+text-align:right;
+margin-top: 2px;
+width:685px;
+}
+#project #content-rev a { color: #CCC; }
+#project #content-rev a:hover {
+  background: transparent;
+}
+
+#timer { position: absolute; top: 28px; right: 20px; margin-left: -20px; }
+#timer #timer_button { 
+	width: 37px; 
+	height: 43px; 
+	background: url('/images/timer.png') 3px 0 no-repeat; 
+	cursor: pointer; 
+	display: block; 
+	padding: 0; 
+	margin-top: -20px;
+	float: right;
+}
+#timer #timer_button:hover { background: url('/images/timer.png') -35px 0 no-repeat; padding: 0;}
+#timer #timer_button.running { background: url('/images/timer.png') -74px 0 no-repeat; padding: 0;}
+#timer #timer_time {
+	float: left;
+}
+#manual_time {
+float:right;
+font-size:70%;
+margin-top:34px;
+text-align:right;
+width:50px;
+}
+#manual_time a {
+	width: 100%;
+}
+
+#times { margin-bottom: 30px; }
+#times hr { width: 230px; }
+#times div { display: inline;}
+#times li { cursor: pointer; padding: 3px; float: none; }
+#times li .content { display: none; }
+#times li:hover .info { background: #CCC; }
+#times li:hover .content { display: inline; }
+
+/* WINDOWS */
+.window-pane { display: none; clear: both; background: #DDD; padding: 12px 5px 5px 5px; min-height: 250px; border-bottom: 1px solid #EEE;}
+#windows .selected { display: block; }
+#windows #windows-tabs { clear: both; }
+#windows #windows-tabs li { float: left; }
+#windows #windows-tabs li a { color: #FFF; background: none; display: block; padding: 3px 5px;}
+#windows #windows-tabs li.selected, #windows #windows-tabs li.selected a, #windows #windows-tabs li a:hover { background: #DDD; color: black; }
+#windows { background: #666666; padding: 3px; border: 1px solid #333; }
+
+/* Time */
+
+#time ul {
+	margin: 15px 10px;
+}
+#time .date { 
+	font-size: 85%; 
+	width: 130px;
+}
+#time h1 { font-size: 30px; float: none; clear: both; margin-bottom: 30px; }
+#time h2 { 
+	float: left; 
+	border-bottom:2px solid #D3D9E9;
+	color:#000E4A;
+	display:inline;
+	font-size:20px;
+	text-shadow:-2px 2px 4px #6374AB;
+	margin-right: 15px;
+}
+#project #time li {
+	border-bottom:1px solid #BBB;
+	margin-bottom: 4px;
+	padding-bottom: 2px;
+}
