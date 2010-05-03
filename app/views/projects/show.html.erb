@@ -1,34 +1,123 @@
-<p>
-  <b>Title:</b>
-  <%=h @project.title %>
-</p>
-
-<p>
-  <b>Duedate:</b>
-  <%=h @project.duedate %>
-</p>
-
-<p>
-  <b>Client:</b>
-  <%=h @project.client_id %>
-</p>
+  <h1><%=h @project.title %></h1>
+<p>Due: <%=h @project.duedate %></p>
+<p>Client: <%=h @project.client_id %></p>
 
 
-		<form method="post" action="">
-		  <div id="content-rev"><a href="javascript:;">Rev: <%=@note.rev%></a></div>
-		  <div class="text-container"><textarea id="content" name="content" rows="20" cols="40"><%=@note.content%></textarea></div>
-		  <input type="submit" id="save" name="save" value="Save" class="submit" />
-	  </form>
-	  <div class="clear"></div>
-	  
-	  <script type="text/javascript">
-		  $('#save').click(function(e) {
-		    Save();
-		    e.preventDefault();
-		    alert('Saved!');
-		  });
+
+
+
+
+<div id="windows">
+	<ul id="windows-tabs">
+		<li id="tab-comments"><a href="comments">Comments</a></li>
+	</ul>
+	<script type="text/javascript">
+		/* This needs to go right after the above */
+		$('#windows-tabs a').click(function(e){
+			
+			target = $(this).attr('href');
+			$('.window-pane:visible, #windows-tabs li.selected').removeClass('selected');
+			$('#'+target+', #windows-tabs li#tab-'+target).addClass('selected');
+			//$.botPost('/projects/<?=$project['web_link']?>/preferences/window/'+target);
+			e.preventDefault();
+			//if (projectClass.callbacks[target]) { projectClass.callbacks[target](); }
+			
+		});
+	</script>
+	<div class="window-pane" id="comments">		
+
+
+				<form method="post" action="">
+				  <div id="content-rev"><a href="javascript:;">Rev: <%=@note.rev%></a></div>
+				  <div class="text-container"><textarea id="content" name="content" rows="20" cols="40"><%=@note.content%></textarea></div>
+				  <input type="submit" id="save" name="save" value="Save" class="submit" />
+			  </form>
+			  <div class="clear"></div>
+
+			  <script type="text/javascript">
+				  $('#save').click(function(e) {
+				    Save();
+				    e.preventDefault();
+				    alert('Saved!');
+				  });
+		</script>
+
+
+
+
+
+
+
+
+	</div>
+	<script type="text/javascript">
+		target = 'comments';
+		$('#'+target+', #windows-tabs li#tab-'+target).addClass('selected');
+
+
+		$(document).ready(function() {		
+			//var project = projectClass;
+			//project.init('<?=$project['window']?>','<?=$project['web_link']?>');
+		});
+	</script>
+</div>	
+
+</div>
+
+<script type="text/javascript">
+//var web_link = '<?=$project['web_link']?>';
+//var latest_rev_id   = '<?=$project['latest_rev_id']?>';
+
+$(document).ready(function() {
+	
+  $(document).keyup(function(event){
+    clearInterval(autosaver);
+    if (old_form_contents != $("#content").serialize()) // if there is a change
+    {
+      autosaver       = setTimeout(   "Save()",5000 );    // wait 2 seconds after typing to save
+    }
+  });	
+  $('#content-rev').click(function(e) {
+    e.preventDefault();
+    rev_id            = $('#content-rev a')[0].innerHTML;
+    rev_id            = parseInt(rev_id.substring(rev_id.indexOf(':')+2));
+    console.log(rev_id);
+    if (rev_id > 0) { last_rev_id = "<< Rev " + (rev_id - 1);} else { last_rev_id = ''; }
+    if (rev_id < latest_rev_id) { next_rev_id = " Rev " + (rev_id + 1) + ">>";} else { next_rev_id = ''; }    
+    $('#content-rev')[0].innerHTML = "<a href='javascript:;'>"+last_rev_id+"</a> | <a href='javascript:;'>" + next_rev_id+"</a>";
+  });
+  
+  //var timer = timerClass;
+  //timer.init();
+  //timer.project	=	'<?=$project['web_link']?>';
+});
+
+var autosaver;
+var form_contents;
+var old_form_contents     = $("#content").serialize();
+
+function Save()
+{
+  //console.log('save it');
+  old_form_contents     = $("#content").serialize();
+  $.botPost('/projects/update/'+web_link, $("#content").serialize(), function(data) {
+    if (data.rev_id) { updateRevID(data.rev_id); }
+  }, "json");
+}
+function updateRevID(rev_id)
+{
+  $('#content-rev a')[0].innerHTML = "Rev: " + rev_id;
+  latest_rev_id = rev_id;
+}
+
 </script>
 
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+
+
+
+
+
+
+
+
