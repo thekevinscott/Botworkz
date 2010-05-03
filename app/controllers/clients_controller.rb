@@ -7,7 +7,7 @@ class ClientsController < ApplicationController
   def index
     
     @user = User.find(session[:user_id])    
-    @clients = @user.clients.all
+    @clients = @user.clients.all(:order => :rate)
 
     respond_to do |format|
       format.html # index.html.erb
