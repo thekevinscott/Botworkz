@@ -13,7 +13,7 @@ body, html {
 body { background: url(/images/fade.png) repeat-x; padding-top: 20px; }
 a { outline: none;}
 
-.clear {	clear: both; }
+.clear, .c {	clear: both; }
 .page_load {	text-align: center;}
 .right { float: right; }
 .left { float: left; }
