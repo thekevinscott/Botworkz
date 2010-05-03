@@ -30,3 +30,86 @@ Migrating to CreateProjects (20100503160951)
   [4;35;1mSQL (2.5ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
   [4;36;1mSQL (4.6ms)[0m   [0;1mdescribe `projects`[0m
   [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `projects`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-03 11:11:42) [GET]
+  [4;36;1mProject Load (3.9ms)[0m   [0;1mSELECT * FROM `projects` [0m
+Rendering template within layouts/projects
+Rendering projects/index
+Completed in 104ms (View: 77, DB: 4) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mClient Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#index (for 127.0.0.1 at 2010-05-03 11:13:49) [GET]
+  [4;35;1mClient Load (0.3ms)[0m   [0mSELECT * FROM `clients` [0m
+Rendering template within layouts/clients
+Rendering clients/index
+Completed in 84ms (View: 75, DB: 1) | 200 OK [http://localhost/clients/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#new (for 127.0.0.1 at 2010-05-03 11:13:50) [GET]
+  [4;36;1mClient Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Rendering template within layouts/clients
+Rendering clients/new
+Completed in 47ms (View: 41, DB: 2) | 200 OK [http://localhost/clients/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#create (for 127.0.0.1 at 2010-05-03 11:13:59) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "client"=>{"name"=>"Jason Parkin", "comments"=>"Rate going up to 50 after H&M", "rate"=>"40"}}
+  [4;35;1mClient Columns (95.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mSQL (34.8ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mClient Create (0.3ms)[0m   [0mINSERT INTO `clients` (`name`, `created_at`, `comments`, `updated_at`, `rate`) VALUES('Jason Parkin', '2010-05-03 16:14:00', 'Rate going up to 50 after H&M', '2010-05-03 16:14:00', 40)[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/clients/1
+Completed in 141ms (DB: 132) | 302 Found [http://localhost/clients]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#show (for 127.0.0.1 at 2010-05-03 11:14:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mClient Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (2.8ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 1) [0m
+Rendering template within layouts/clients
+Rendering clients/show
+Completed in 19ms (View: 9, DB: 5) | 200 OK [http://localhost/clients/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#index (for 127.0.0.1 at 2010-05-03 11:14:01) [GET]
+  [4;35;1mClient Load (0.3ms)[0m   [0mSELECT * FROM `clients` [0m
+Rendering template within layouts/clients
+Rendering clients/index
+  [4;36;1mClient Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 13ms (View: 6, DB: 2) | 200 OK [http://localhost/clients]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-03 11:14:07) [GET]
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` [0m
+Rendering template within layouts/projects
+Rendering projects/index
+Completed in 6ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:14:08) [GET]
+  [4;36;1mProject Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+Completed in 253ms (View: 244, DB: 2) | 200 OK [http://localhost/projects/new]

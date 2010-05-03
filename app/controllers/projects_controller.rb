@@ -40,7 +40,8 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.xml
   def create
-    @project = Project.new(params[:project])
+    @client = Client.first
+    @project = @client.projects.new(params[:project])
 
     respond_to do |format|
       if @project.save
