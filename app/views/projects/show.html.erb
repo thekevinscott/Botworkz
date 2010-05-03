@@ -1,3 +1,5 @@
+<div id="project">
+
   <h1><%=h @project.title %></h1>
 <p>Due: <%=h @project.duedate %></p>
 <p>Client: <%=h @project.client_id %></p>
@@ -24,12 +26,16 @@
 			
 		});
 	</script>
+	
+		
+		
+	
+	
 	<div class="window-pane" id="comments">		
 
-
 				<form method="post" action="">
-				  <div id="content-rev"><a href="javascript:;">Rev: <%=@note.rev%></a></div>
-				  <div class="text-container"><textarea id="content" name="content" rows="20" cols="40"><%=@note.content%></textarea></div>
+				  <div id="content-rev"><a href="javascript:;">Rev: <%= @note.rev %></a></div>
+				  <div class="text-container"><textarea id="content" name="content" rows="20" cols="40"><%= @note.content %></textarea></div>
 				  <input type="submit" id="save" name="save" value="Save" class="submit" />
 			  </form>
 			  <div class="clear"></div>
@@ -121,3 +127,5 @@ function updateRevID(rev_id)
 
 
 
+
+</div>
