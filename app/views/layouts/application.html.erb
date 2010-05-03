@@ -15,8 +15,7 @@
     <div id="wrap-bar"></div>
 		
 		<div id="information"><div id="botworks"><a href="/"><h1><span class="light">bot</span><span class="heavy">Works</span></h1></a></div>
-
-		<div id="username"><h1><%= current_user.username %></h1></div>
+		<% if logged_in? %><div id="username"><h1><%= current_user.username %></h1></div><% end %>
 		</div>
 		
 
