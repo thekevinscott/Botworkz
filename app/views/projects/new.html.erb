@@ -3,6 +3,10 @@
 <% form_for(@project) do |f| %>
   <%= f.error_messages %>
 
+  <p>Client: 
+	<%= f.collection_select :client_id, Client.all, :id, :name %>
+  </p>
+
   <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -14,10 +18,6 @@
   <p>
     <%= f.label :duedate %><br />
     <%= f.date_select :duedate %>
-  </p>
-  <p>
-    <%= f.label :client_id %><br />
-    <%= f.text_field :client_id %>
   </p>
   <p>
     <%= f.submit 'Create' %>

@@ -113,3 +113,521 @@ Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:14:08) [GET]
 Rendering template within layouts/projects
 Rendering projects/new
 Completed in 253ms (View: 244, DB: 2) | 200 OK [http://localhost/projects/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mProject Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:17:40) [GET]
+  [4;35;1mProject Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` [0m
+
+ActionView::TemplateError (wrong number of arguments (3 for 4)) on line #8 of app/views/projects/new.html.erb:
+5: 
+6:   <% clients = Client.all %>
+7:   <p>Client: 
+8:     <%= f.collection_select :client_id, clients, :id %>
+9:   </p>
+10:   <p>
+11:     <%= f.label :title %><br />
+
+    app/views/projects/new.html.erb:8:in `collection_select'
+    app/views/projects/new.html.erb:8
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (49.3ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:19:33) [GET]
+  [4;35;1mProject Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` [0m
+
+ActionView::TemplateError (undefined method `project' for #<Project:0x1040b30d8>) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= f.collection_select(:project, :client_id, Client.all, :id) %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (45.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:19:42) [GET]
+  [4;35;1mProject Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mClient Load (19.9ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` [0m
+
+ActionView::TemplateError (undefined method `projects' for #<Project:0x1041ec698>) on line #8 of app/views/projects/new.html.erb:
+5: 
+6:   <% clients = Client.all %>
+7:   <p>Client: 
+8: 	<%= f.collection_select(:projects, :client_id, Client.all, :id) %>
+9:   </p>
+10: 
+11:   <p>
+
+    app/views/projects/new.html.erb:8
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (116.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:20:14) [GET]
+  [4;36;1mProject Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;35;1mClient Load (31.1ms)[0m   [0mSELECT * FROM `clients` [0m
+
+ActionView::TemplateError (undefined method `#<Project:0x1043126d0>' for #<Project:0x1043126d0>) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= f.collection_select(@project, :client_id, Client.all, :id) %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (128.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:20:27) [GET]
+  [4;36;1mProject Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+
+ActionView::TemplateError (undefined method `client_id' for #<ActionView::Helpers::FormBuilder:0x1043e6408>) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= f.collection_select(f, f.client_id, Client.all, :id) %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (53.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:20:32) [GET]
+  [4;35;1mProject Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` [0m
+
+ActionView::TemplateError (undefined method `#<ActionView::Helpers::FormBuilder:0x1044f2748>' for #<Project:0x104128ea0>) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= f.collection_select(f, @project.client_id, Client.all, :id) %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (45.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:20:38) [GET]
+  [4;35;1mProject Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mClient Load (31.7ms)[0m   [0;1mSELECT * FROM `clients` [0m
+
+ActionView::TemplateError (wrong number of arguments (4 for 5)) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= collection_select(f, @project.client_id, Client.all, :id) %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7:in `collection_select'
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (120.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:20:41) [GET]
+  [4;35;1mProject Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mClient Load (26.1ms)[0m   [0;1mSELECT * FROM `clients` [0m
+
+ActionView::TemplateError (undefined method `#<ActionView::Helpers::FormBuilder:0x104337fc0>' for #<Project:0x10435d2e8>) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= f.collection_select(f, @project.client_id, Client.all, :id) %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (116.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:20:46) [GET]
+  [4;35;1mProject Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mClient Load (42.5ms)[0m   [0;1mSELECT * FROM `clients` [0m
+
+ActionView::TemplateError (undefined method `#<ActionView::Helpers::FormBuilder:0x1044378d0>' for #<Project:0x104461568>) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= f.collection_select(f, @project.client_id, Client.all, @project.id) %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:21:32) [GET]
+  [4;35;1mProject Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+
+ActionView::TemplateError (undefined method `name_with_initial' for #<Client:0x1044f4368>) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= collection_select(@project, :client_id, Client.all, :id, :name_with_initial, {:prompt => true}) %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:21:37) [GET]
+  [4;36;1mProject Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;35;1mClient Load (30.9ms)[0m   [0mSELECT * FROM `clients` [0m
+
+ActionView::TemplateError (wrong number of arguments (4 for 5)) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= collection_select(@project, :client_id, Client.all, :id) %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7:in `collection_select'
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (110.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:21:41) [GET]
+  [4;36;1mProject Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;35;1mClient Load (2.3ms)[0m   [0mSELECT * FROM `clients` [0m
+
+ActionView::TemplateError (undefined method `#<Project:0x10436ad80>' for #<Project:0x10436ad80>) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= f.collection_select(@project, :client_id, Client.all, :id) %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (124.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:22:01) [GET]
+  [4;36;1mProject Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;35;1mClient Load (29.2ms)[0m   [0mSELECT * FROM `clients` [0m
+
+ActionView::TemplateError (undefined method `project' for #<Project:0x104470978>) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= f.collection_select(:project, :client_id, Client.all, :id) %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (47.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:22:04) [GET]
+  [4;36;1mProject Columns (46.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;35;1mClient Load (0.3ms)[0m   [0mSELECT * FROM `clients` [0m
+
+ActionView::TemplateError (undefined method `map' for :client_id:Symbol) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= f.collection_select(:id, :client_id, Client.all, :id) %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (46.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:22:41) [GET]
+  [4;36;1mProject Columns (17.9ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;35;1mClient Load (0.5ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+
+ActionView::TemplateError (undefined method `code' for #<Client:0x1041fb8a0>) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= f.collection_select :client_id, Client.all, :id, :code %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (118.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.8ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:23:13) [GET]
+  [4;35;1mProject Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mClient Load (26.4ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+
+ActionView::TemplateError (undefined method `client_id' for #<Client:0x10432ba68>) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= f.collection_select :client_id, Client.all, :id, :client_id %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (121.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:23:18) [GET]
+  [4;36;1mProject Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;35;1mClient Load (20.9ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 61ms (View: 30, DB: 26) | 200 OK [http://localhost/projects/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:23:25) [GET]
+  [4;35;1mProject Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;36;1mClient Load (28.1ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+
+ActionView::TemplateError (undefined method `title' for #<Client:0x1043193e0>) on line #7 of app/views/projects/new.html.erb:
+4:   <%= f.error_messages %>
+5: 
+6:   <p>Client: 
+7: 	<%= f.collection_select :client_id, Client.all, :id, :title %>
+8:   </p>
+9: 
+10:   <p>
+
+    app/views/projects/new.html.erb:7
+    app/views/projects/new.html.erb:3
+    app/controllers/projects_controller.rb:29:in `new'
+
+Rendered rescues/_trace (114.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-03 11:23:34) [GET]
+  [4;36;1mProject Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/projects
+Rendering projects/new
+  [4;35;1mClient Load (1.8ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 33ms (View: 23, DB: 5) | 200 OK [http://localhost/projects/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-03 11:23:48) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"H&M", "duedate(2i)"=>"5", "duedate(3i)"=>"3", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"", "startdate(3i)"=>"3"}}
+  [4;35;1mClient Load (0.4ms)[0m   [0mSELECT * FROM `clients` LIMIT 1[0m
+  [4;36;1mClient Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mProject Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Create (0.4ms)[0m   [0mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `duedate`, `client_id`, `startdate`) VALUES('2010-05-03 16:23:48', 'H&M', '2010-05-03 16:23:48', '2010-05-03', 1, '2010-05-03')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/1
+Completed in 24ms (DB: 11) | 302 Found [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-03 11:23:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProject Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (2.2ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 1) [0m
+Rendering template within layouts/projects
+Rendering projects/show
+Completed in 17ms (View: 7, DB: 4) | 200 OK [http://localhost/projects/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-03 11:23:49) [GET]
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` [0m
+Rendering template within layouts/projects
+Rendering projects/index
+  [4;36;1mProject Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Completed in 12ms (View: 6, DB: 2) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mClient Load (0.2ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (9.1ms)[0m   [0mSELECT * FROM `clients` LIMIT 1[0m
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` LIMIT 1[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.client_id = 1) [0m
+  [4;36;1mProject Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
