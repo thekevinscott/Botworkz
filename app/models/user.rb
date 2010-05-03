@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   
   has_many :projects
-  has_many :clients  
+  has_many :clients
+  has_many :notes    
   
   # new columns need to be added here to be writable through mass assignment
   attr_accessible :username, :email, :password, :password_confirmation

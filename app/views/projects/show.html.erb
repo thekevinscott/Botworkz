@@ -19,5 +19,21 @@
 </p>
 
 
+		<form method="post" action="">
+		  <div id="content-rev"><a href="javascript:;">Rev: <?=$project['rev_id']?></a></div>
+		  <div class="text-container"><textarea id="content" name="content" rows="20" cols="40">Holla</textarea></div>
+		  <input type="submit" id="save" name="save" value="Save" class="submit" />
+	  </form>
+	  <div class="clear"></div>
+	  
+	  <script type="text/javascript">
+		  $('#save').click(function(e) {
+		    Save();
+		    e.preventDefault();
+		    alert('Saved!');
+		  });
+</script>
+
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
