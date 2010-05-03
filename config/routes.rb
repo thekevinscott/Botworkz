@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.login 'login', :controller => 'sessions', :action => 'new'
 
   map.archived 'archived', :controller => 'projects', :action => 'archived'
-  
+  map.connect "projects/archived", :controller => "projects", :action => "archived"
   
   map.resources :sessions
 
