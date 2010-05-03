@@ -3860,3 +3860,193 @@ Rendering template within layouts/application
 Rendering clients/index
   [4;35;1mClient Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
 Completed in 66ms (View: 7, DB: 46) | 200 OK [http://localhost/clients]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#index (for 127.0.0.1 at 2010-05-03 14:32:31) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clients"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (38.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Load (0.3ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering clients/index
+  [4;36;1mClient Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 133ms (View: 11, DB: 42) | 200 OK [http://localhost/clients]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#edit (for 127.0.0.1 at 2010-05-03 14:32:34) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"clients"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (42.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mClient Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.6ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering clients/edit
+Completed in 92ms (View: 32, DB: 49) | 200 OK [http://localhost/clients/2/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#update (for 127.0.0.1 at 2010-05-03 14:32:41) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"8X6+vEmYWzkPKFeiDTvWLOqun4qaxxuXlS5ehtQAXIM=", "id"=>"2", "client"=>{"name"=>"Jason Parkin", "comments"=>"Going up to 50 after H&M", "rate"=>"40"}, "controller"=>"clients"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (39.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.7ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mClient Update (0.3ms)[0m   [0;1mUPDATE `clients` SET `updated_at` = '2010-05-03 19:32:41', `comments` = 'Going up to 50 after H&M' WHERE `id` = 2[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/clients/2
+Completed in 64ms (DB: 48) | 302 Found [http://localhost/clients/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#show (for 127.0.0.1 at 2010-05-03 14:32:41) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"clients"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.2ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering clients/show
+Completed in 22ms (View: 3, DB: 8) | 200 OK [http://localhost/clients/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#edit (for 127.0.0.1 at 2010-05-03 14:33:23) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"clients"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mClient Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.7ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering clients/edit
+Completed in 32ms (View: 8, DB: 9) | 200 OK [http://localhost/clients/2/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#update (for 127.0.0.1 at 2010-05-03 14:33:24) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"8X6+vEmYWzkPKFeiDTvWLOqun4qaxxuXlS5ehtQAXIM=", "id"=>"2", "client"=>{"name"=>"Jason Parkin", "comments"=>"Going up to 50 after H&M", "rate"=>"40"}, "controller"=>"clients"}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (39.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (2.2ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000index
+Completed in 63ms (DB: 47) | 302 Found [http://localhost/clients/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-03 14:33:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 124ms (View: 105, DB: 9) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#update (for 127.0.0.1 at 2010-05-03 14:33:34) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"8X6+vEmYWzkPKFeiDTvWLOqun4qaxxuXlS5ehtQAXIM=", "id"=>"2", "client"=>{"name"=>"Jason Parkin", "comments"=>"Going up to 50 after H&M", "rate"=>"40"}, "controller"=>"clients"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (42.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (2.1ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000clients
+Completed in 64ms (DB: 49) | 302 Found [http://localhost/clients/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#update (for 127.0.0.1 at 2010-05-03 14:33:42) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"8X6+vEmYWzkPKFeiDTvWLOqun4qaxxuXlS5ehtQAXIM=", "id"=>"2", "client"=>{"name"=>"Jason Parkin", "comments"=>"Going up to 50 after H&M", "rate"=>"40"}, "controller"=>"clients"}
+  [4;35;1mUser Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (36.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mClient Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.8ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/clients/index
+Completed in 60ms (DB: 45) | 302 Found [http://localhost/clients/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#show (for 127.0.0.1 at 2010-05-03 14:33:42) [GET]
+  Parameters: {"action"=>"show", "id"=>"index", "controller"=>"clients"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.2ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 0 AND (`clients`.user_id = 1)) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Client with ID=index AND (`clients`.user_id = 1)):
+  app/controllers/clients_controller.rb:23:in `show'
+
+Rendered rescues/_trace (111.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (2.7ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#update (for 127.0.0.1 at 2010-05-03 14:33:49) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"8X6+vEmYWzkPKFeiDTvWLOqun4qaxxuXlS5ehtQAXIM=", "id"=>"2", "client"=>{"name"=>"Jason Parkin", "comments"=>"Going up to 50 after H&M", "rate"=>"40"}, "controller"=>"clients"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (37.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mClient Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (3.4ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/clients/
+Completed in 59ms (DB: 47) | 302 Found [http://localhost/clients/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#index (for 127.0.0.1 at 2010-05-03 14:33:49) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clients"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Load (0.3ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering clients/index
+  [4;36;1mClient Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 24ms (View: 8, DB: 6) | 200 OK [http://localhost/clients/]

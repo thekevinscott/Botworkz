@@ -11,7 +11,7 @@
 <% @clients.each do |client| %>
   <tr>
     <td><%=h client.name %></td>
-    <td><%=h client.rate %></td>
+    <td>$<%=h client.rate %></td>
     <td><%=h client.comments %></td>
     <td><%= link_to 'Show', client %> / <%= link_to 'Edit', edit_client_path(client) %> / <%= link_to 'Destroy', client, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
