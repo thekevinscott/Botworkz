@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
     
     @project = @user.projects.find(params[:id])
 
-
+    @note = @project.notes.last
 
     respond_to do |format|
       format.html # show.html.erb

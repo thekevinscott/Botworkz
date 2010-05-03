@@ -20,8 +20,8 @@
 
 
 		<form method="post" action="">
-		  <div id="content-rev"><a href="javascript:;">Rev: <?=$project['rev_id']?></a></div>
-		  <div class="text-container"><textarea id="content" name="content" rows="20" cols="40">Holla</textarea></div>
+		  <div id="content-rev"><a href="javascript:;">Rev: <%=@note.rev%></a></div>
+		  <div class="text-container"><textarea id="content" name="content" rows="20" cols="40"><%=@note.text%></textarea></div>
 		  <input type="submit" id="save" name="save" value="Save" class="submit" />
 	  </form>
 	  <div class="clear"></div>
