@@ -15,11 +15,11 @@
 
 <% @projects.each do |project| %>
   <tr>
-    <td><%=h project.title %></td>
+    <td><a href="/projects/<%= project.id %>"><%=h project.title %></a></td>
     <td><%=h project.startdate %></td>
     <td><%=h project.duedate %></td>
     <td><%=h Client.find(project.client_id).name %></td>
-    <td><%= link_to 'Show', project %> / <%= link_to 'Edit', edit_project_path(project) %> / <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td> / <%= link_to 'Edit', edit_project_path(project) %> / <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
