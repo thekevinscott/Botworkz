@@ -1311,3 +1311,4 @@ The error occurred while evaluating nil.[]):
 Rendered rescues/_trace (30.7ms)
 Rendered rescues/_request_and_response (0.3ms)
 Rendering rescues/layout (internal_server_error)
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` LIMIT 1[0m

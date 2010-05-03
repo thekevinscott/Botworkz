@@ -18,7 +18,11 @@ class ClientsController < ApplicationController
   # GET /clients/1
   # GET /clients/1.xml
   def show
-    @client = Client.find(params[:id])
+    @user = User.find(session[:user_id])    
+    
+    @client = @user.clients.find(params[:id])
+
+    
 
     respond_to do |format|
       format.html # show.html.erb
