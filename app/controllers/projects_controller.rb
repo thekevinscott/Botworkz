@@ -3,6 +3,21 @@ class ProjectsController < ApplicationController
 
   # GET /projects
   # GET /projects.xml
+  
+  def archive
+    
+    @user = User.find(session[:user_id])    
+
+    @project = @user.projects.find(params[:id])
+    @project.archive = true
+    if @project.save
+      
+      flash[:notice] = 'Project was successfully archived.'
+      format.html { redirect_to('/') }
+      format.xml  { render :xml => @project, :status => :created, :location => @project }
+    end
+  end
+  
   def index
     @user = User.find(session[:user_id])    
     @projects = @user.projects.all
