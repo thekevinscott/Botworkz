@@ -1,10 +1,13 @@
 class ClientsController < ApplicationController
   before_filter :login_required
+  @user = User.find(session[:user_id])
   
   # GET /clients
   # GET /clients.xml
   def index
-    @clients = Client.all
+    
+    @user = User.find(session[:user_id])    
+    @clients = @user.clients.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,7 +45,10 @@ class ClientsController < ApplicationController
   # POST /clients
   # POST /clients.xml
   def create
-    @client = Client.new(params[:client])
+    
+    @user = User.find(session[:user_id])
+    
+    @client = @user.clients.new(params[:client])
 
     respond_to do |format|
       if @client.save

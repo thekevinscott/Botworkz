@@ -1,10 +1,11 @@
 class ProjectsController < ApplicationController
   before_filter :login_required
-  
+
   # GET /projects
   # GET /projects.xml
   def index
-    @projects = Project.all
+    @user = User.find(session[:user_id])    
+    @projects = @user.projects.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,6 +45,7 @@ class ProjectsController < ApplicationController
   def create
     @client = Client.first
     @project = @client.projects.new(params[:project])
+    @project.user_id = User.find(session[:user_id]).id
 
     respond_to do |format|
       if @project.save
