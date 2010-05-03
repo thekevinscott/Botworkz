@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
   def show
     @user = User.find(session[:user_id])    
     
-    @projects = @user.projects.find(params[:id])
+    @project = @user.projects.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
