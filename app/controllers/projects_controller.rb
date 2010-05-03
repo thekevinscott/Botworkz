@@ -48,7 +48,9 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.xml
   def create
+    
     @client = Client.first
+    
     @project = @client.projects.new(params[:project])
     @project.user_id = User.find(session[:user_id]).id
 

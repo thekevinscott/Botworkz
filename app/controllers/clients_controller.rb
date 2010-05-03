@@ -43,7 +43,10 @@ class ClientsController < ApplicationController
 
   # GET /clients/1/edit
   def edit
-    @client = Client.find(params[:id])
+    @user = User.find(session[:user_id])    
+    
+    @client = @user.clients.find(params[:id])
+    
   end
 
   # POST /clients
@@ -69,7 +72,9 @@ class ClientsController < ApplicationController
   # PUT /clients/1
   # PUT /clients/1.xml
   def update
-    @client = Client.find(params[:id])
+    @user = User.find(session[:user_id])    
+    
+    @client = @user.clients.find(params[:id])
 
     respond_to do |format|
       if @client.update_attributes(params[:client])
@@ -86,7 +91,10 @@ class ClientsController < ApplicationController
   # DELETE /clients/1
   # DELETE /clients/1.xml
   def destroy
-    @client = Client.find(params[:id])
+    @user = User.find(session[:user_id])    
+    
+    @client = @user.clients.find(params[:id])
+    
     @client.destroy
 
     respond_to do |format|
