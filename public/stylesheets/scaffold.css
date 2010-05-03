@@ -1,54 +1,85 @@
-body { background-color: #fff; color: #333; }
+html {
+	height: 100%;
+	background: url(/images/stripe.jpg);
+}
+body, html {
+	margin: 0;
+	padding: 0;
+	font-family: "HelveticaNeue-Light","HelveticaNeue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	color: #1C1C1C;
+	text-align: center;
+}
+body { background: url(/images/fade.png) repeat-x; padding-top: 20px; }
+a { outline: none;}
 
-body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+.clear {	clear: both; }
+.page_load {	text-align: center;}
+.right { float: right; }
+.left { float: left; }
+h1 {	
+	font-family: "American Typewriter", "Courier New", Courier, monospace;
+	font-size: 60px;
+}
+.light { color: #4a60ae;}
+.heavy { color: #7f6e50;}
+
+h2, h3, h4, h5, p {
+	font-weight: normal;
+}
+a { text-decoration: none;}
+
+#wrap {
+	width: 827px;
+	margin: 0 auto;
+	border: 1px solid #CCC;
+	border-bottom: 1px solid #999;
+	border-right: 1px solid #999;
+	background: #F2F2F2 url(/images/wrap-back.jpg) repeat-y;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+#wrap-bar {
+  background: #d3d9e9;
+  height: 10px;
+  border-bottom:1px solid #BDC4D6;
+}
+br {
+	width: 100%;
+	clear: both;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
 
-.fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+/* FORM STUFF */
+
+form {
+	clear: both;
+}
+.form_container { margin: 10px 0;}
+label {	float: left; clear: both; margin: 4px 0; text-align: right; width: 30%; padding: 6px;}
+input {	float: right; margin: 4px 0; width: 60%; padding: 6px; border: 1px solid #999;}
+input:focus { background: #F6FFAB; }
+input.submit { width: 100px; }
+
+.input_error {
+	font-size:10px;
+	line-height:1px;
+	text-align:right;
+	color: #7A0000;
+	width: 100%;
+	float: right;
+}
+.input_error p {
+	margin: 4px 0 0 0; padding: 0;
+}
+.input_error p.valid {
+	color: green;
 }
 
-#errorExplanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+input.error {
+	background: #FFCC8F;
 }
-
-#errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
+input#remember {
+  float: left;
+  margin-left: 8px;
+  margin-top: 9px;
 }
-
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-#errorExplanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-
