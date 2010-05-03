@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
   
   def archived
     @user = User.find(session[:user_id])    
-    @projects = @user.projects.all(:conditions => [" archive = 1 "])
+    @projects = @user.projects.all(:conditions => [" archive = '1' "])
     
     respond_to do |format|
       format.html { render :template => 'projects/index' }
@@ -34,7 +34,7 @@ class ProjectsController < ApplicationController
   
   def index
     @user = User.find(session[:user_id])    
-    @projects = @user.projects.all(:conditions => [" archive = 0 || archive IS NULL "])
+    @projects = @user.projects.all(:conditions => [" archive = '0' || archive IS NULL "])
     
 
     respond_to do |format|
