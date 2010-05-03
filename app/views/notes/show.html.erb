@@ -1,0 +1,28 @@
+<p>
+  <b>Text:</b>
+  <%=h @note.text %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%=h @note.project_id %>
+</p>
+
+<p>
+  <b>Client:</b>
+  <%=h @note.client_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @note.user_id %>
+</p>
+
+<p>
+  <b>Rev:</b>
+  <%=h @note.rev %>
+</p>
+
+
+<%= link_to 'Edit', edit_note_path(@note) %> |
+<%= link_to 'Back', notes_path %>

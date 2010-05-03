@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  text: MyText
+  project_id: 1
+  client_id: 1
+  user_id: 1
+  rev: 1
+
+two:
+  text: MyText
+  project_id: 1
+  client_id: 1
+  user_id: 1
+  rev: 1
