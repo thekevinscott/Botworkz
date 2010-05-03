@@ -39,40 +39,18 @@
 				  <input type="submit" id="save" name="save" value="Save" class="submit" />
 			  </form>
 			  <div class="clear"></div>
-
-			  <script type="text/javascript">
-				  $('#save').click(function(e) {
-				    Save();
-				    e.preventDefault();
-				    alert('Saved!');
-				  });
-		</script>
-
-
-
-
-
-
-
-
 	</div>
 	<script type="text/javascript">
-		target = 'comments';
-		$('#'+target+', #windows-tabs li#tab-'+target).addClass('selected');
-
-
-		$(document).ready(function() {		
-			//var project = projectClass;
-			//project.init('<?=$project['window']?>','<?=$project['web_link']?>');
-		});
+		//target = 'comments';
+		//$('#'+target+', #windows-tabs li#tab-'+target).addClass('selected');
 	</script>
 </div>	
 
 </div>
 
 <script type="text/javascript">
-//var web_link = '<?=$project['web_link']?>';
-//var latest_rev_id   = '<?=$project['latest_rev_id']?>';
+
+
 
 $(document).ready(function() {
 	
@@ -129,3 +107,4 @@ function updateRevID(rev_id)
 
 
 </div>
+<script type="text/javascript" src="/javascripts/project.js"></script>
