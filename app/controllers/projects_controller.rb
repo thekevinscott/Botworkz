@@ -34,7 +34,7 @@ class ProjectsController < ApplicationController
   
   def index
     @user = User.find(session[:user_id])    
-    @projects = @user.projects.all(:conditions => [" archive IS FALSE || archive IS NULL "])
+    @projects = @user.projects.all(:conditions => [" /*archive IS FALSE ||*/ archive IS NULL "])
     
 
     respond_to do |format|
