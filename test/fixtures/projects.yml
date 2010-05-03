@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  startdate: 2010-05-03
+  duedate: 2010-05-03
+  client_id: 1
+
+two:
+  title: MyString
+  startdate: 2010-05-03
+  duedate: 2010-05-03
+  client_id: 1
