@@ -59,6 +59,10 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
+        
+        @project.notes.new({:client_id => @client.id, :user_id => @user.id }).save
+        
+        
         flash[:notice] = 'Project was successfully created.'
         format.html { redirect_to(@project) }
         format.xml  { render :xml => @project, :status => :created, :location => @project }
