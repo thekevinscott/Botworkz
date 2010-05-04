@@ -20,8 +20,8 @@
     <td><%=h project.duedate %></td>
     <td><%=h Client.find(project.client_id).name %></td>
     <td>
-		<a href="/projects/archive/<%= project.id %>">Archive</a> / 
-		<%= link_to 'Edit', edit_project_path(project) %> / 
+		<a href="/projects/archive/<%= project.url %>">Archive</a> / 
+		<a href="/projects/edit/<%= project.url %>">Edit</a> / 		
 		<%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

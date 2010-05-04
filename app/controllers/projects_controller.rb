@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
     
     @user = User.find(session[:user_id])    
 
-    @project = @user.projects.find(params[:id])
+    @project = @user.projects.find_by_url(params[:id])
     @project.archive = true
     
     if @project.save
@@ -74,7 +74,7 @@ class ProjectsController < ApplicationController
 
     @user = User.find(session[:user_id])    
 
-    @project = @user.projects.find(params[:id])
+    @project = @user.projects.find_by_url(params[:id])
   end
 
   # POST /projects
