@@ -36,6 +36,9 @@ class ProjectsController < ApplicationController
     @user = User.find(session[:user_id])    
     @projects = @user.projects.all(:conditions => [" /*archive IS FALSE ||*/ archive IS NULL "])
     
+    @projects.each do |p| # patch for existing live site. eventually remove
+      p.url = p.id unless p.url
+    end
 
     respond_to do |format|
       format.html
@@ -49,7 +52,10 @@ class ProjectsController < ApplicationController
     @user = User.find(session[:user_id])    
     
     @project = @user.projects.find_by_url(params[:id])
-
+    if @project.nil?
+      @project = @user.projects.find(params[:id])
+    end
+    
     @note = @project.notes.last
 
     respond_to do |format|
@@ -75,6 +81,9 @@ class ProjectsController < ApplicationController
     @user = User.find(session[:user_id])    
 
     @project = @user.projects.find_by_url(params[:id])
+    if @project.nil?
+      @project = @user.projects.find(params[:id])
+    end
   end
 
   # POST /projects
