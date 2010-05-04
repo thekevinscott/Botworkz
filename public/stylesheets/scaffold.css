@@ -301,3 +301,7 @@ table th {
 	text-align: center;
 	background: #DDD;
 }
+#update-save {
+	padding: 10px 0 0 10px;
+	display: none;
+}
