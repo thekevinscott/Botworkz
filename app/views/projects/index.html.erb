@@ -15,7 +15,7 @@
 
 <% @projects.each do |project| %>
   <tr>
-    <td><a href="/projects/<%= project.id %>"><%=h project.title %></a></td>
+    <td><a href="/projects/<%= project.url %>"><%=h project.title %></a></td>
     <td><%=h project.startdate %></td>
     <td><%=h project.duedate %></td>
     <td><%=h Client.find(project.client_id).name %></td>

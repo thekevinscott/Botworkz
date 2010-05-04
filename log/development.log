@@ -6934,3 +6934,2376 @@ Processing NotesController#new (for 127.0.0.1 at 2010-05-04 14:27:25) [POST]
   [4;35;1mNote Create (0.3ms)[0m   [0mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 19:27:25', 14, 17, '2010-05-04 19:27:25', NULL, NULL, 'Testing\n\nRock it!\n\n\nWoot\n\nRock\n\nOKay?\n\nFine.')[0m
   [4;36;1mSQL (4.4ms)[0m   [0;1mCOMMIT[0m
 Completed in 86ms (View: 1, DB: 62) | 200 OK [http://localhost/notes/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 14:53:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"14", "controller"=>"projects"}
+  [4;35;1mUser Columns (9.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (2.0ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 14 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mNote Load (0.4ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.project_id = 14) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.2ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mNote Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 71ms (View: 33, DB: 21) | 200 OK [http://localhost/projects/14]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 14:53:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (1.1ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.4ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 45ms (View: 21, DB: 12) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (101.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateClients (20100503160812)
+Migrating to CreateProjects (20100503160951)
+Migrating to CreateUsers (20100503163448)
+Migrating to AddArchiveToProject (20100503163907)
+Migrating to TieProjectsAndClientsToUser (20100503164141)
+Migrating to CreateNotes (20100503165503)
+Migrating to DropTextAddContent (20100503170435)
+Migrating to AddUrlToProjects (20100504195418)
+  [4;36;1mSQL (180.9ms)[0m   [0;1mALTER TABLE `projects` ADD `url` text[0m
+  [4;35;1mSQL (163.6ms)[0m   [0mALTER TABLE `clients` ADD `url` text[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100504195418')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mdescribe `clients`[0m
+  [4;36;1mSQL (3.7ms)[0m   [0;1mSHOW KEYS FROM `clients`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mdescribe `notes`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mSHOW KEYS FROM `notes`[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mdescribe `projects`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSHOW KEYS FROM `projects`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (6.6ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 14:59:00) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;35;1mUser Columns (20.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+SyntaxError (/www/botworkz/app/models/project.rb:15: syntax error, unexpected kEND, expecting $end):
+  app/controllers/projects_controller.rb:64:in `new'
+
+Rendered rescues/_trace (37.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 14:59:32) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (42.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+SyntaxError (/www/botworkz/app/models/project.rb:17: syntax error, unexpected kEND, expecting $end):
+  app/controllers/projects_controller.rb:64:in `new'
+
+Rendered rescues/_trace (38.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 14:59:46) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (42.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;36;1mClient Load (1.1ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 224ms (View: 161, DB: 51) | 200 OK [http://localhost/projects/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 14:59:58) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"rock it out \"BITHCES\" what's up", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (2.5ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mProject Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (2.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Create (0.6ms)[0m   [0;1mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 19:59:58', 'rock it out \"BITHCES\" what\'s up', '2010-05-04 19:59:58', NULL, 'rock-it-out-bithces-whats-up', '2010-05-04', 2, 1, '2010-05-04')[0m
+  [4;35;1mSQL (9.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mNote Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.5ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 19:59:58', 15, 1, '2010-05-04 19:59:58', 2, 1, NULL)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects/15
+Completed in 190ms (DB: 36) | 302 Found [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 14:59:58) [GET]
+  Parameters: {"action"=>"show", "id"=>"15", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (0.6ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = '15') AND (`projects`.user_id = 1) LIMIT 1[0m
+
+NoMethodError (undefined method `notes' for nil:NilClass):
+  app/controllers/projects_controller.rb:53:in `show'
+
+Rendered rescues/_trace (35.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM `projects` ORDER BY projects.id DESC LIMIT 1[0m
+  [4;36;1mProject Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (0.8ms)[0m   [0mSELECT * FROM `projects` ORDER BY projects.id DESC LIMIT 1[0m
+  [4;36;1mNote Load (0.4ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.project_id = 15) [0m
+  [4;35;1mNote Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:00:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"15", "controller"=>"projects"}
+  [4;35;1mUser Columns (6.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (36.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (0.5ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = '15') AND (`projects`.user_id = 1) LIMIT 1[0m
+
+NoMethodError (undefined method `notes' for nil:NilClass):
+  app/controllers/projects_controller.rb:53:in `show'
+
+Rendered rescues/_trace (36.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:00:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"15", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (39.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (3.8ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = '15') AND (`projects`.user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/projects/show.html.erb:
+1: <div id="project" rel="<%= @project.id %>">
+2: 
+3: 	<h1><%=h @project.title %></h1>
+4: 	<p>Due: <%=h @project.duedate %></p>
+
+    app/views/projects/show.html.erb:1
+    app/controllers/projects_controller.rb:55:in `show'
+
+Rendered rescues/_trace (109.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:00:41) [GET]
+  Parameters: {"action"=>"show", "id"=>"15", "controller"=>"projects"}
+  [4;35;1mUser Columns (6.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (0.8ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = '15') AND (`projects`.user_id = 1) LIMIT 1[0m
+
+NoMethodError (undefined method `notes' for nil:NilClass):
+  app/controllers/projects_controller.rb:53:in `show'
+
+Rendered rescues/_trace (31.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:01:13) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"rock it out \"BITHCES\" what's up2", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (85.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (17.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (12.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (20.2ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mProject Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Create (0.3ms)[0m   [0;1mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:01:13', 'rock it out \"BITHCES\" what\'s up2', '2010-05-04 20:01:13', NULL, 'rock-it-out-bithces-whats-up', '2010-05-04', 2, 1, '2010-05-04')[0m
+  [4;35;1mSQL (60.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mNote Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.2ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:01:14', 16, 1, '2010-05-04 20:01:14', 2, 1, NULL)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000rock-it-out-bithces-whats-up
+Completed in 307ms (DB: 203) | 302 Found [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:01:18) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"rock it out \"BITHCES\" what's up2", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (16.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.3ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mProject Columns (4.1ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (2.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Create (0.3ms)[0m   [0;1mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:01:18', 'rock it out \"BITHCES\" what\'s up2', '2010-05-04 20:01:18', NULL, 'rock-it-out-bithces-whats-up', '2010-05-04', 2, 1, '2010-05-04')[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mNote Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (2.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.2ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:01:18', 17, 1, '2010-05-04 20:01:18', 2, 1, NULL)[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000rock-it-out-bithces-whats-up
+Completed in 72ms (DB: 41) | 302 Found [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:01:19) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"rock it out \"BITHCES\" what's up2", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (28.5ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mProject Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (4.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Create (0.2ms)[0m   [0;1mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:01:19', 'rock it out \"BITHCES\" what\'s up2', '2010-05-04 20:01:19', NULL, 'rock-it-out-bithces-whats-up', '2010-05-04', 2, 1, '2010-05-04')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mNote Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.2ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:01:19', 18, 1, '2010-05-04 20:01:19', 2, 1, NULL)[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000rock-it-out-bithces-whats-up
+Completed in 80ms (DB: 49) | 302 Found [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:01:35) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"rock it out \"BITHCES\" what's up2", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mProject Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Create (0.3ms)[0m   [0;1mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:01:35', 'rock it out \"BITHCES\" what\'s up2', '2010-05-04 20:01:35', NULL, 'rock-it-out-bithces-whats-up', '2010-05-04', 2, 1, '2010-05-04')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCOMMIT[0m
+  [4;36;1mNote Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.2ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:01:35', 19, 1, '2010-05-04 20:01:35', 2, 1, NULL)[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it-out-bithces-whats-up
+Completed in 50ms (DB: 17) | 302 Found [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:01:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it-out-bithces-whats-up", "controller"=>"projects"}
+  [4;36;1mUser Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (0.9ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it-out-bithces-whats-up') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.project_id = 15) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.2ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mNote Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 78ms (View: 46, DB: 13) | 200 OK [http://localhost/projects/rock-it-out-bithces-whats-up]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NotesController#new (for 127.0.0.1 at 2010-05-04 15:01:46) [POST]
+  Parameters: {"project_id"=>"15", "action"=>"new", "content"=>"sdfsf", "controller"=>"notes"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (43.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (4.2ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (1.2ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 15 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.project_id = 15) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mNote Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mNote Create (0.3ms)[0m   [0mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:01:46', 15, 2, '2010-05-04 20:01:46', NULL, NULL, 'sdfsf')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCOMMIT[0m
+Completed in 184ms (View: 45, DB: 56) | 200 OK [http://localhost/notes/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:01:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.7ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (5.2ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (13.1ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.2ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 97ms (View: 55, DB: 27) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#destroy (for 127.0.0.1 at 2010-05-04 15:01:56) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"15", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (4.8ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (3.1ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 15 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Destroy (0.2ms)[0m   [0mDELETE FROM `projects` WHERE `id` = 15[0m
+  [4;36;1mSQL (5.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 31ms (DB: 17) | 302 Found [http://localhost/projects/15]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:01:56) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.5ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.5ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 50ms (View: 28, DB: 9) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#destroy (for 127.0.0.1 at 2010-05-04 15:01:57) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"16", "controller"=>"projects"}
+  [4;36;1mUser Columns (4.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (2.5ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 16 AND (`projects`.user_id = 1)) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Destroy (0.2ms)[0m   [0;1mDELETE FROM `projects` WHERE `id` = 16[0m
+  [4;35;1mSQL (4.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 29ms (DB: 16) | 302 Found [http://localhost/projects/16]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:01:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.7ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (4.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (31.7ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.3ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 151ms (View: 95, DB: 42) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#destroy (for 127.0.0.1 at 2010-05-04 15:01:58) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"17", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (0.6ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 17 AND (`projects`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Destroy (0.3ms)[0m   [0;1mDELETE FROM `projects` WHERE `id` = 17[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 24ms (DB: 10) | 302 Found [http://localhost/projects/17]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:01:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (1.2ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.1ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 47ms (View: 23, DB: 11) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#destroy (for 127.0.0.1 at 2010-05-04 15:01:59) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"18", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (43.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (1.2ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 18 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Destroy (0.2ms)[0m   [0mDELETE FROM `projects` WHERE `id` = 18[0m
+  [4;36;1mSQL (24.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 160ms (DB: 74) | 302 Found [http://localhost/projects/18]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:01:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.2ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 43ms (View: 19, DB: 11) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2010-05-04 15:03:49) [GET]
+  Parameters: {"action"=>"edit", "id"=>"19", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (42.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (5.1ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 19 AND (`projects`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering projects/edit
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 140ms (View: 72, DB: 55) | 200 OK [http://localhost/projects/19/edit]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2010-05-04 15:03:57) [GET]
+  Parameters: {"action"=>"edit", "id"=>"19", "controller"=>"projects"}
+  [4;36;1mUser Columns (7.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (39.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (2.9ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 19 AND (`projects`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering projects/edit
+  [4;35;1mClient Load (0.3ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 106ms (View: 34, DB: 55) | 200 OK [http://localhost/projects/19/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-05-04 15:04:03) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"19", "project"=>{"title"=>"rock it out \"BITHCES\" what's up2", "duedate(1i)"=>"2010", "duedate(2i)"=>"5", "url"=>"rock-it-out-bithces-whats-up_sucka", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;35;1mUser Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (2.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 19 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Update (0.3ms)[0m   [0mUPDATE `projects` SET `updated_at` = '2010-05-04 20:04:03', `url` = 'rock-it-out-bithces-whats-up_sucka' WHERE `id` = 19[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/19
+Completed in 29ms (DB: 12) | 302 Found [http://localhost/projects/19]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:04:03) [GET]
+  Parameters: {"action"=>"show", "id"=>"19", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (1.7ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = '19') AND (`projects`.user_id = 1) LIMIT 1[0m
+
+NoMethodError (undefined method `notes' for nil:NilClass):
+  app/controllers/projects_controller.rb:53:in `show'
+
+Rendered rescues/_trace (92.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:04:21) [GET]
+  Parameters: {"action"=>"show", "id"=>"19", "controller"=>"projects"}
+  [4;36;1mUser Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (44.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = '19') AND (`projects`.user_id = 1) LIMIT 1[0m
+
+NoMethodError (undefined method `notes' for nil:NilClass):
+  app/controllers/projects_controller.rb:53:in `show'
+
+Rendered rescues/_trace (34.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-05-04 15:04:22) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"19", "project"=>{"title"=>"rock it out \"BITHCES\" what's up2", "duedate(1i)"=>"2010", "duedate(2i)"=>"5", "url"=>"rock-it-out-bithces-whats-up_sucka", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;35;1mUser Columns (16.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (2.1ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 19 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it-out-bithces-whats-up_sucka
+Completed in 117ms (DB: 23) | 302 Found [http://localhost/projects/19]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:04:23) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it-out-bithces-whats-up_sucka", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (0.7ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it-out-bithces-whats-up_sucka') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.project_id = 19) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (4.6ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.3ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 47ms (View: 11, DB: 16) | 200 OK [http://localhost/projects/rock-it-out-bithces-whats-up_sucka]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#index (for 127.0.0.1 at 2010-05-04 15:04:36) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clients"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (45.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mClient Load (0.8ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.user_id = 1) ORDER BY rate DESC[0m
+Rendering template within layouts/application
+Rendering clients/index
+  [4;35;1mClient Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mProject Columns (4.5ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT count(*) AS count_all FROM `projects` WHERE (`projects`.client_id = 2) [0m
+Completed in 110ms (View: 42, DB: 56) | 200 OK [http://localhost/clients]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#show (for 127.0.0.1 at 2010-05-04 15:04:48) [GET]
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"clients"}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (4.7ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering clients/show
+Completed in 31ms (View: 5, DB: 11) | 200 OK [http://localhost/clients/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#edit (for 127.0.0.1 at 2010-05-04 15:04:50) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"clients"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (43.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mClient Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.9ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering clients/edit
+Completed in 72ms (View: 9, DB: 50) | 200 OK [http://localhost/clients/2/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#update (for 127.0.0.1 at 2010-05-04 15:04:52) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"2", "client"=>{"name"=>"Jason Parkin", "comments"=>"Going up to 50 after H&M", "rate"=>"40"}, "controller"=>"clients"}
+  [4;36;1mUser Columns (32.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.1ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/clients/
+Completed in 56ms (DB: 40) | 302 Found [http://localhost/clients/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ClientsController#index (for 127.0.0.1 at 2010-05-04 15:04:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"clients"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mClient Load (0.8ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.user_id = 1) ORDER BY rate DESC[0m
+Rendering template within layouts/application
+Rendering clients/index
+  [4;35;1mClient Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mProject Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM `projects` WHERE (`projects`.client_id = 2) [0m
+Completed in 111ms (View: 88, DB: 10) | 200 OK [http://localhost/clients/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:04:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (42.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (3.4ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 87ms (View: 23, DB: 52) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2010-05-04 15:04:58) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (2.7ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 14 AND (`projects`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering projects/edit
+  [4;35;1mClient Load (0.4ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 81ms (View: 56, DB: 13) | 200 OK [http://localhost/projects/14/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-05-04 15:05:01) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"14", "project"=>{"title"=>"Suck it", "duedate(1i)"=>"2010", "duedate(2i)"=>"5", "url"=>"suck-it", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (1.2ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 14 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Update (0.4ms)[0m   [0mUPDATE `projects` SET `updated_at` = '2010-05-04 20:05:01', `url` = 'suck-it' WHERE `id` = 14[0m
+  [4;36;1mSQL (13.8ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/suck-it
+Completed in 41ms (DB: 20) | 302 Found [http://localhost/projects/14]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:05:01) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (1.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.project_id = 14) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.3ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mNote Columns (12.3ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 57ms (View: 18, DB: 22) | 200 OK [http://localhost/projects/suck-it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:05:05) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.7ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (2.5ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 105ms (View: 81, DB: 14) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:05:09) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (2.2ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mNote Load (1.8ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.project_id = 14) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (4.2ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 52ms (View: 13, DB: 19) | 200 OK [http://localhost/projects/suck-it]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:05:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 47ms (View: 28, DB: 8) | 200 OK [http://localhost/projects/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:06:09) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;36;1mUser Columns (6.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (36.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;35;1mClient Load (0.6ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 85ms (View: 24, DB: 47) | 200 OK [http://localhost/projects/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:06:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;36;1mClient Load (0.5ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 46ms (View: 21, DB: 11) | 200 OK [http://localhost/projects/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:06:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (39.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;35;1mClient Load (2.1ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 154ms (View: 21, DB: 49) | 200 OK [http://localhost/projects/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:06:22) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (70.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;36;1mClient Load (0.5ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 110ms (View: 21, DB: 77) | 200 OK [http://localhost/projects/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:06:26) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"Rock it!", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "client_id"=>"2"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (5.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (0.6ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mProject Columns (4.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Create (0.3ms)[0m   [0;1mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:06:26', 'Rock it!', '2010-05-04 20:06:26', NULL, 'rock-it', '2010-05-04', 2, 1, NULL)[0m
+  [4;35;1mSQL (20.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mNote Columns (4.7ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.3ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:06:26', 20, 1, '2010-05-04 20:06:26', 2, 1, NULL)[0m
+  [4;35;1mSQL (29.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it
+Completed in 173ms (DB: 76) | 302 Found [http://localhost/projects]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:06:26) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (0.7ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mNote Load (1.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.project_id = 20) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mNote Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 52ms (View: 16, DB: 13) | 200 OK [http://localhost/projects/rock-it]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:06:43) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (110.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.2ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 231ms (View: 96, DB: 119) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:06:46) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (185.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (3.2ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.project_id = 20) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.2ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mNote Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 235ms (View: 15, DB: 201) | 200 OK [http://localhost/projects/rock-it]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:06:48) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.1ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 45ms (View: 23, DB: 9) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2010-05-04 15:06:50) [GET]
+  Parameters: {"action"=>"edit", "id"=>"20", "controller"=>"projects"}
+  [4;36;1mUser Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (4.6ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering projects/edit
+  [4;35;1mClient Load (0.3ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (14.8ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 74ms (View: 34, DB: 27) | 200 OK [http://localhost/projects/20/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-05-04 15:06:53) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"20", "project"=>{"title"=>"Rock it!", "duedate(1i)"=>"2010", "duedate(2i)"=>"5", "url"=>"r", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (4.5ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (3.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Update (0.3ms)[0m   [0mUPDATE `projects` SET `updated_at` = '2010-05-04 20:06:53', `startdate` = '2010-05-04', `url` = 'r' WHERE `id` = 20[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/r
+Completed in 31ms (DB: 15) | 302 Found [http://localhost/projects/20]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:06:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"r", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (2.4ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'r') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.project_id = 20) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.5ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mNote Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 119ms (View: 86, DB: 14) | 200 OK [http://localhost/projects/r]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:06:55) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (40.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (3.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 89ms (View: 24, DB: 52) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2010-05-04 15:06:56) [GET]
+  Parameters: {"action"=>"edit", "id"=>"20", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (37.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (2.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering projects/edit
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 83ms (View: 24, DB: 46) | 200 OK [http://localhost/projects/20/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-05-04 15:06:58) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"20", "project"=>{"title"=>"Rock it!", "duedate(1i)"=>"2010", "duedate(2i)"=>"5", "url"=>"", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (4.1ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (2.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Update (0.3ms)[0m   [0;1mUPDATE `projects` SET `updated_at` = '2010-05-04 20:06:58', `url` = '' WHERE `id` = 20[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects/
+Completed in 31ms (DB: 11) | 302 Found [http://localhost/projects/20]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:06:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (5.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 48ms (View: 21, DB: 14) | 200 OK [http://localhost/projects/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2010-05-04 15:07:15) [GET]
+  Parameters: {"action"=>"edit", "id"=>"20", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (44.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (3.7ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering projects/edit
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 154ms (View: 87, DB: 54) | 200 OK [http://localhost/projects/20/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-05-04 15:07:16) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"20", "project"=>{"title"=>"Rock it!", "duedate(1i)"=>"2010", "duedate(2i)"=>"5", "url"=>"", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (101.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (5.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (4.7ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (2.9ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/
+Completed in 133ms (DB: 115) | 302 Found [http://localhost/projects/20]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:07:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (3.8ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.7ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 51ms (View: 23, DB: 13) | 200 OK [http://localhost/projects/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2010-05-04 15:07:49) [GET]
+  Parameters: {"action"=>"edit", "id"=>"20", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (42.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (27.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (2.5ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering projects/edit
+  [4;35;1mClient Load (1.2ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 195ms (View: 28, DB: 80) | 200 OK [http://localhost/projects/20/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-05-04 15:07:50) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"20", "project"=>{"title"=>"Rock it!", "duedate(1i)"=>"2010", "duedate(2i)"=>"5", "url"=>"", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;35;1mUser Columns (17.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (5.2ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Update (0.3ms)[0m   [0mUPDATE `projects` SET `updated_at` = '2010-05-04 20:07:50', `url` = 'rock-it' WHERE `id` = 20[0m
+  [4;36;1mSQL (30.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it
+Completed in 77ms (DB: 59) | 302 Found [http://localhost/projects/20]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:07:50) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (0.7ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.project_id = 20) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.6ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mNote Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 46ms (View: 15, DB: 13) | 200 OK [http://localhost/projects/rock-it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:07:53) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (42.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (5.2ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (2.2ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 90ms (View: 22, DB: 55) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2010-05-04 15:08:47) [GET]
+  Parameters: {"action"=>"edit", "id"=>"20", "controller"=>"projects"}
+  [4;35;1mUser Columns (105.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.8ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (5.5ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (23.0ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering projects/edit
+  [4;36;1mClient Load (1.7ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 176ms (View: 23, DB: 141) | 200 OK [http://localhost/projects/20/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-05-04 15:08:49) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"20", "project"=>{"title"=>"Rock it!", "duedate(1i)"=>"2010", "duedate(2i)"=>"5", "url"=>"rock-it", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (1.6ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+
+NoMethodError (undefined method `find_by_url' for #<Project:0x1044deea0>):
+  app/models/project.rb:17:in `before_save'
+  app/controllers/projects_controller.rb:115:in `update'
+  app/controllers/projects_controller.rb:114:in `update'
+
+Rendered rescues/_trace (43.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-05-04 15:08:55) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"20", "project"=>{"title"=>"Rock it!", "duedate(1i)"=>"2010", "duedate(2i)"=>"5", "url"=>"rock-it", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (1.1ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it
+Completed in 29ms (DB: 9) | 302 Found [http://localhost/projects/20]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:08:55) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (0.5ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.project_id = 20) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (0.9ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mNote Columns (16.6ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 135ms (View: 17, DB: 31) | 200 OK [http://localhost/projects/rock-it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:10:03) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (42.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.4ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.3ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 84ms (View: 22, DB: 50) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2010-05-04 15:10:05) [GET]
+  Parameters: {"action"=>"edit", "id"=>"20", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (40.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (1.8ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+Rendering template within layouts/application
+Rendering projects/edit
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 189ms (View: 128, DB: 48) | 200 OK [http://localhost/projects/20/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2010-05-04 15:10:07) [PUT]
+  Parameters: {"commit"=>"Update", "action"=>"update", "_method"=>"put", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"20", "project"=>{"title"=>"Rock it!", "duedate(1i)"=>"2010", "duedate(2i)"=>"5", "url"=>"", "duedate(3i)"=>"4", "startdate(1i)"=>"2010", "startdate(2i)"=>"5", "client_id"=>"2", "startdate(3i)"=>"4"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (20.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (4.6ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it
+Completed in 49ms (DB: 31) | 302 Found [http://localhost/projects/20]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:10:07) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (9.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (1.7ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.project_id = 20) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.1ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mNote Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 53ms (View: 12, DB: 21) | 200 OK [http://localhost/projects/rock-it]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:10:15) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (42.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (1.1ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.2ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 165ms (View: 23, DB: 52) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:10:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;36;1mUser Columns (4.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (45.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (7.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;35;1mClient Load (0.3ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 99ms (View: 23, DB: 62) | 200 OK [http://localhost/projects/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:10:21) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"Rock it!", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "client_id"=>"2"}, "controller"=>"projects"}
+  [4;35;1mUser Columns (22.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mClient Columns (32.3ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (4.4ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;36;1mProject Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;36;1mProject Create (0.3ms)[0m   [0;1mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:10:21', 'Rock it!', '2010-05-04 20:10:21', NULL, 'rock-it', '2010-05-04', 2, 1, NULL)[0m
+  [4;35;1mSQL (22.8ms)[0m   [0mCOMMIT[0m
+  [4;36;1mNote Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.2ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:10:21', 21, 1, '2010-05-04 20:10:21', 2, 1, NULL)[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it
+Completed in 193ms (DB: 94) | 302 Found [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:10:21) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (0.9ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mNote Load (0.6ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.project_id = 20) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.2ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mNote Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 59ms (View: 19, DB: 14) | 200 OK [http://localhost/projects/rock-it]
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;35;1mProject Load (0.4ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;36;1mProject Load (0.5ms)[0m   [0;1mSELECT * FROM `projects` [0m
+  [4;35;1mProject Load (1.2ms)[0m   [0mSELECT * FROM `projects` [0m
+  [4;36;1mProject Load (1.9ms)[0m   [0;1mSELECT * FROM `projects` WHERE (url = 'rock-it' ) [0m
+  [4;35;1mProject Load (0.4ms)[0m   [0mSELECT * FROM `projects` WHERE (url = 'rock-it' ) [0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE (url = 'rock-it2' ) [0m
+  [4;35;1mProject Load (7.4ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;36;1mProject Load (7.5ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;35;1mProject Load (1.4ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it2') LIMIT 1[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE (url = 'rock-it' ) [0m
+  [4;36;1mProject Load (0.5ms)[0m   [0;1mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;35;1mProject Load (0.4ms)[0m   [0mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;35;1mProject Load (0.5ms)[0m   [0mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;36;1mProject Load (1.1ms)[0m   [0;1mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;35;1mProject Load (0.5ms)[0m   [0mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE (url LIKE 'rock-it2%' ) [0m
+  [4;35;1mProject Load (0.4ms)[0m   [0mSELECT * FROM `projects` WHERE (url LIKE 'rock-it2%' ) [0m
+  [4;36;1mProject Load (5.0ms)[0m   [0;1mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:16:09) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (15.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.1ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 89ms (View: 50, DB: 28) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:16:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (38.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;36;1mClient Load (1.1ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 122ms (View: 65, DB: 46) | 200 OK [http://localhost/projects/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:16:21) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"rock it", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "client_id"=>"2"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (2.3ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mProject Columns (4.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;36;1mProject Create (0.2ms)[0m   [0;1mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:16:21', 'rock it', '2010-05-04 20:16:21', NULL, 'rock-it-1', '2010-05-04', 2, 1, NULL)[0m
+  [4;35;1mSQL (19.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mNote Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.3ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:16:21', 22, 1, '2010-05-04 20:16:21', 2, 1, NULL)[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it-1
+Completed in 73ms (DB: 40) | 302 Found [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:16:21) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it-1", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (0.6ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it-1') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.project_id = 22) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.1ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mNote Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 108ms (View: 15, DB: 12) | 200 OK [http://localhost/projects/rock-it-1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:16:38) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (39.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.4ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 91ms (View: 27, DB: 48) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#destroy (for 127.0.0.1 at 2010-05-04 15:16:40) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"22", "controller"=>"projects"}
+  [4;36;1mUser Columns (5.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (35.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (3.1ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 22 AND (`projects`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Destroy (0.8ms)[0m   [0;1mDELETE FROM `projects` WHERE `id` = 22[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 62ms (DB: 49) | 302 Found [http://localhost/projects/22]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:16:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (1.2ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (3.8ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (5.5ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.7ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 54ms (View: 24, DB: 16) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#destroy (for 127.0.0.1 at 2010-05-04 15:16:41) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"21", "controller"=>"projects"}
+  [4;36;1mUser Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (42.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (1.5ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 21 AND (`projects`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Destroy (0.2ms)[0m   [0;1mDELETE FROM `projects` WHERE `id` = 21[0m
+  [4;35;1mSQL (31.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 98ms (DB: 82) | 302 Found [http://localhost/projects/21]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:16:42) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.4ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (0.6ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 115ms (View: 90, DB: 13) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:16:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;35;1mUser Columns (71.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (23.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (5.3ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;36;1mClient Load (1.7ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 157ms (View: 23, DB: 104) | 200 OK [http://localhost/projects/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:16:47) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"rock-it", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "client_id"=>"2"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (21.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (39.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (5.8ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (2.1ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mProject Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Load (1.6ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rockit') LIMIT 1[0m
+  [4;35;1mProject Create (0.2ms)[0m   [0mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:16:47', 'rock-it', '2010-05-04 20:16:47', NULL, 'rockit', '2010-05-04', 2, 1, NULL)[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mNote Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mNote Create (0.2ms)[0m   [0mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:16:47', 23, 1, '2010-05-04 20:16:47', 2, 1, NULL)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rockit
+Completed in 110ms (DB: 79) | 302 Found [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:16:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"rockit", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rockit') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.project_id = 23) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (2.3ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mNote Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 48ms (View: 14, DB: 16) | 200 OK [http://localhost/projects/rockit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:16:59) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (39.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.5ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (7.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (3.4ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 92ms (View: 25, DB: 56) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:17:12) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;36;1mUser Columns (4.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (37.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;35;1mClient Load (2.1ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 154ms (View: 21, DB: 50) | 200 OK [http://localhost/projects/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:17:15) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"Rock it!", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "client_id"=>"2"}, "controller"=>"projects"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mClient Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.7ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;36;1mProject Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;35;1mProject Create (0.2ms)[0m   [0mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:17:15', 'Rock it!', '2010-05-04 20:17:15', NULL, 'rock-it-1', '2010-05-04', 2, 1, NULL)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mNote Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mNote Create (0.2ms)[0m   [0mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:17:15', 24, 1, '2010-05-04 20:17:15', 2, 1, NULL)[0m
+  [4;36;1mSQL (36.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it-1
+Completed in 85ms (DB: 55) | 302 Found [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:17:15) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it-1", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (0.7ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it-1') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mNote Load (1.7ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.project_id = 24) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.1ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mNote Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 126ms (View: 91, DB: 15) | 200 OK [http://localhost/projects/rock-it-1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:17:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.4ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.9ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 99ms (View: 31, DB: 13) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#destroy (for 127.0.0.1 at 2010-05-04 15:17:26) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"20", "controller"=>"projects"}
+  [4;35;1mUser Columns (50.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (10.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (54.8ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (4.5ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 20 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Destroy (0.2ms)[0m   [0mDELETE FROM `projects` WHERE `id` = 20[0m
+  [4;36;1mSQL (25.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 174ms (DB: 145) | 302 Found [http://localhost/projects/20]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:17:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (21.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (40.1ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (19.7ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 200ms (View: 28, DB: 86) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (1.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#destroy (for 127.0.0.1 at 2010-05-04 15:17:27) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"23", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (36.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (4.5ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (2.4ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 23 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Destroy (0.2ms)[0m   [0mDELETE FROM `projects` WHERE `id` = 23[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 61ms (DB: 48) | 302 Found [http://localhost/projects/23]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:17:27) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.5ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (5.6ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.1ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 47ms (View: 21, DB: 14) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#destroy (for 127.0.0.1 at 2010-05-04 15:17:29) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"24", "controller"=>"projects"}
+  [4;36;1mUser Columns (4.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (1.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 24 AND (`projects`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Destroy (0.2ms)[0m   [0;1mDELETE FROM `projects` WHERE `id` = 24[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 25ms (DB: 10) | 302 Found [http://localhost/projects/24]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:17:29) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.7ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (2.5ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 42ms (View: 19, DB: 10) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:17:30) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;36;1mUser Columns (19.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (11.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (5.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;35;1mClient Load (15.2ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 174ms (View: 95, DB: 61) | 200 OK [http://localhost/projects/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:17:32) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"Rock it!", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "client_id"=>"2"}, "controller"=>"projects"}
+  [4;35;1mUser Columns (18.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mClient Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.7ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;36;1mProject Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;36;1mProject Create (0.2ms)[0m   [0;1mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:17:32', 'Rock it!', '2010-05-04 20:17:32', NULL, 'rock-it', '2010-05-04', 2, 1, NULL)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mNote Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.2ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:17:32', 25, 1, '2010-05-04 20:17:32', 2, 1, NULL)[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it
+Completed in 71ms (DB: 35) | 302 Found [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:17:32) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (0.8ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mNote Load (0.7ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.project_id = 25) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (0.6ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mNote Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 49ms (View: 18, DB: 11) | 200 OK [http://localhost/projects/rock-it]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:17:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (6.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (3.1ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 60ms (View: 26, DB: 17) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:17:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;36;1mUser Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (38.7ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;35;1mClient Load (0.6ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 76ms (View: 18, DB: 47) | 200 OK [http://localhost/projects/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:17:38) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"Rock it!", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "client_id"=>"2"}, "controller"=>"projects"}
+  [4;35;1mUser Columns (6.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mClient Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.3ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;36;1mProject Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;35;1mProject Create (0.2ms)[0m   [0mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:17:38', 'Rock it!', '2010-05-04 20:17:38', NULL, 'rock-it-1', '2010-05-04', 2, 1, NULL)[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mNote Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mNote Create (0.2ms)[0m   [0mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:17:38', 26, 1, '2010-05-04 20:17:38', 2, 1, NULL)[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it-1
+Completed in 114ms (DB: 23) | 302 Found [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:17:38) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it-1", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (2.2ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it-1') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.project_id = 26) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.7ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mNote Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 45ms (View: 14, DB: 14) | 200 OK [http://localhost/projects/rock-it-1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:18:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (43.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (2.8ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (4.9ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 157ms (View: 90, DB: 57) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#destroy (for 127.0.0.1 at 2010-05-04 15:18:23) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"26", "controller"=>"projects"}
+  [4;36;1mUser Columns (34.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (11.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (459.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (16.8ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 26 AND (`projects`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Destroy (0.3ms)[0m   [0;1mDELETE FROM `projects` WHERE `id` = 26[0m
+  [4;35;1mSQL (6.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 546ms (DB: 528) | 302 Found [http://localhost/projects/26]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:18:23) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (2.8ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (4.1ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 61ms (View: 27, DB: 18) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:18:25) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 111ms (View: 87, DB: 10) | 200 OK [http://localhost/projects/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:18:27) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"Rock it!", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "client_id"=>"2"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (42.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (5.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.3ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mProject Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;36;1mProject Create (0.2ms)[0m   [0;1mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:18:28', 'Rock it!', '2010-05-04 20:18:28', NULL, 'rock-it-1', '2010-05-04', 2, 1, NULL)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCOMMIT[0m
+  [4;36;1mNote Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.2ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:18:28', 27, 1, '2010-05-04 20:18:28', 2, 1, NULL)[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it-1
+Completed in 95ms (DB: 60) | 302 Found [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:18:28) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it-1", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (0.6ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it-1') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.project_id = 27) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.3ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mNote Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 50ms (View: 15, DB: 15) | 200 OK [http://localhost/projects/rock-it-1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:18:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (4.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (38.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (10.1ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (9.1ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.5ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 106ms (View: 26, DB: 67) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#destroy (for 127.0.0.1 at 2010-05-04 15:18:32) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"27", "controller"=>"projects"}
+  [4;35;1mUser Columns (7.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (8.4ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (2.5ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`id` = 27 AND (`projects`.user_id = 1)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Destroy (0.2ms)[0m   [0mDELETE FROM `projects` WHERE `id` = 27[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 36ms (DB: 22) | 302 Found [http://localhost/projects/27]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:18:32) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.5ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (17.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.2ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 158ms (View: 116, DB: 27) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:18:47) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;36;1mUser Columns (10.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (30.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;35;1mClient Load (0.5ms)[0m   [0mSELECT * FROM `clients` [0m
+  [4;36;1mClient Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+Completed in 79ms (View: 18, DB: 45) | 200 OK [http://localhost/projects/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:18:52) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"Rock it!", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "client_id"=>"2"}, "controller"=>"projects"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mClient Columns (3.8ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;36;1mProject Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;36;1mProject Load (0.2ms)[0m   [0;1mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;35;1mProject Create (0.2ms)[0m   [0mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:18:52', 'Rock it!', '2010-05-04 20:18:52', NULL, 'rock-it-1', '2010-05-04', 2, 1, NULL)[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mNote Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mNote Create (0.2ms)[0m   [0mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:18:52', 28, 1, '2010-05-04 20:18:52', 2, 1, NULL)[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it-1
+Completed in 55ms (DB: 24) | 302 Found [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:18:53) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it-1", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (0.9ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it-1') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.project_id = 28) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.6ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mNote Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+Completed in 46ms (View: 14, DB: 14) | 200 OK [http://localhost/projects/rock-it-1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:19:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (37.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.4ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (10.8ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (4.7ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 99ms (View: 30, DB: 58) | 200 OK [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#destroy (for 127.0.0.1 at 2010-05-04 15:19:19) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "id"=>"28", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (1.2ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`id` = 28 AND (`projects`.user_id = 1)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Destroy (0.2ms)[0m   [0;1mDELETE FROM `projects` WHERE `id` = 28[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects
+Completed in 82ms (DB: 10) | 302 Found [http://localhost/projects/28]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:19:20) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;36;1mProject Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mClient Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (2.4ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 50ms (View: 21, DB: 14) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:19:21) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (40.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;36;1mClient Load (0.3ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 75ms (View: 16, DB: 47) | 200 OK [http://localhost/projects/new]
+  [4;36;1mSQL (1.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:19:24) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"Rock it!", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "client_id"=>"2"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (161.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (5.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.7ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mProject Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;36;1mProject Create (0.2ms)[0m   [0;1mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:19:24', 'Rock it!', '2010-05-04 20:19:24', NULL, 'rock-it-2', '2010-05-04', 2, 1, NULL)[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mNote Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.3ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:19:24', 29, 1, '2010-05-04 20:19:24', 2, 1, NULL)[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it-2
+Completed in 214ms (DB: 184) | 302 Found [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:19:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it-2", "controller"=>"projects"}
+  [4;36;1mUser Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (3.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (2.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it-2') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.project_id = 29) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.5ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mNote Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 48ms (View: 13, DB: 18) | 200 OK [http://localhost/projects/rock-it-2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-04 15:19:26) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;35;1mUser Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (1.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mProject Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mClient Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.4ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 137ms (View: 47, DB: 13) | 200 OK [http://localhost/projects]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2010-05-04 15:19:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"projects"}
+  [4;35;1mUser Columns (11.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (4.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (8.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/new
+  [4;36;1mClient Load (2.8ms)[0m   [0;1mSELECT * FROM `clients` [0m
+  [4;35;1mClient Columns (10.8ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+Completed in 71ms (View: 20, DB: 38) | 200 OK [http://localhost/projects/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2010-05-04 15:19:29) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"SZEG8Q1/vTkMs9p9/QgfrNKLh2Oi7mkfYUnBYKaMsLI=", "project"=>{"duedate(1i)"=>"2010", "title"=>"Rock it!", "duedate(2i)"=>"5", "duedate(3i)"=>"4", "client_id"=>"2"}, "controller"=>"projects"}
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mClient Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (3.8ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2 AND (`clients`.user_id = 1)) [0m
+  [4;35;1mProject Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it') LIMIT 1[0m
+  [4;35;1mProject Load (0.2ms)[0m   [0mSELECT * FROM `projects` WHERE (url LIKE 'rock-it%' ) [0m
+  [4;36;1mProject Create (0.2ms)[0m   [0;1mINSERT INTO `projects` (`created_at`, `title`, `updated_at`, `archive`, `url`, `duedate`, `client_id`, `user_id`, `startdate`) VALUES('2010-05-04 20:19:29', 'Rock it!', '2010-05-04 20:19:29', NULL, 'rock-it-3', '2010-05-04', 2, 1, NULL)[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mNote Columns (24.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mSQL (9.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mNote Create (0.7ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-04 20:19:30', 30, 1, '2010-05-04 20:19:30', 2, 1, NULL)[0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/projects/rock-it-3
+Completed in 170ms (DB: 59) | 302 Found [http://localhost/projects]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-04 15:19:30) [GET]
+  Parameters: {"action"=>"show", "id"=>"rock-it-3", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (4.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (8.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (11.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'rock-it-3') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.project_id = 30) ORDER BY notes.id DESC LIMIT 1[0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (11.0ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (11.6ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mNote Columns (4.3ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+Completed in 91ms (View: 15, DB: 54) | 200 OK [http://localhost/projects/rock-it-3]

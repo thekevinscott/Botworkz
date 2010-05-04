@@ -48,7 +48,7 @@ class ProjectsController < ApplicationController
   def show
     @user = User.find(session[:user_id])    
     
-    @project = @user.projects.find(params[:id])
+    @project = @user.projects.find_by_url(params[:id])
 
     @note = @project.notes.last
 
@@ -94,7 +94,7 @@ class ProjectsController < ApplicationController
         
         
         flash[:notice] = 'Project was successfully created.'
-        format.html { redirect_to(@project) }
+        format.html { redirect_to('/projects/'+@project.url) }
         format.xml  { render :xml => @project, :status => :created, :location => @project }
       else
         format.html { render :action => "new" }
@@ -114,7 +114,7 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.update_attributes(params[:project])
         flash[:notice] = 'Project was successfully updated.'
-        format.html { redirect_to(@project) }
+        format.html { redirect_to('/projects/'+@project.url) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
