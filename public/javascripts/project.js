@@ -9,7 +9,7 @@
 			
 			$.post('/notes/new',{project_id:$('#project').attr('rel'),content:$('#content').val()},function(data){
 				if (data.note) {
-					$('form #update-save').html("Saved successfully at "+Date(data.note.created_at)).show().delay(1500).fadeOut();
+					$('form #update-save').html("Saved successfully at "+Date(data.note.created_at)).show().delay(2000).fadeOut(1500);
 					$('form #content-rev a').html("Rev: "+data.note.rev);
 				}
 			},'json');
