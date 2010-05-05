@@ -11,28 +11,15 @@
 
 <div id="windows">
 	<ul id="windows-tabs">
-		<li id="tab-comments"><a href="comments">Comments</a></li>
+		<li id="tab-comments" class="selected"><a href="comments">Comments</a></li>
 		<li id="tab-hours"><a href="hours">Hours</a></li>
 	</ul>
-	<script type="text/javascript">
-		$('#windows-tabs a').click(function(e){
-			target = $(this).attr('href');
-			$('.window-pane:visible, #windows-tabs li.selected').removeClass('selected');
-			$('#'+target+', #windows-tabs li#tab-'+target).addClass('selected');
-			e.preventDefault();
-			
-		});
-		$(document).ready(function(){
-			$('#comments, #windows-tabs li#tab-comments').addClass('selected');			
-		});
-
-	</script>
 	
 		
 		
 	
 	
-	<div class="window-pane" id="comments">		
+	<div class="window-pane selected" id="comments">		
 
 		<form method="post" action="">
 		  <div id="content-rev"><a href="javascript:;">Rev: <%= @note.rev %></a></div>
@@ -47,7 +34,7 @@
 	<div class="window-pane" id="hours">		
 
 		<form method="post" action="">
-		  <div class="text-container"><textarea id="content" name="content" rows="20" cols="40"><%= @note.content %></textarea></div>
+		  <div class="text-container"><textarea id="content" name="content" rows="20" cols="40"></textarea></div>
 		  <input type="submit" id="save" name="save" value="Save" class="submit" />
 	  	</form>
 		<div class="clear"></div>
@@ -55,66 +42,6 @@
 </div>	
 
 </div>
-
-<script type="text/javascript">
-
-
-/*
-$(document).ready(function() {
-	
-  $(document).keyup(function(event){
-    clearInterval(autosaver);
-    if (old_form_contents != $("#content").serialize()) // if there is a change
-    {
-      autosaver       = setTimeout(   "Save()",5000 );    // wait 2 seconds after typing to save
-    }
-  });	
-
-
-
-
-  $('#content-rev').click(function(e) {
-    e.preventDefault();
-    rev_id            = $('#content-rev a')[0].innerHTML;
-    rev_id            = parseInt(rev_id.substring(rev_id.indexOf(':')+2));
-    console.log(rev_id);
-    if (rev_id > 0) { last_rev_id = "<< Rev " + (rev_id - 1);} else { last_rev_id = ''; }
-    if (rev_id < latest_rev_id) { next_rev_id = " Rev " + (rev_id + 1) + ">>";} else { next_rev_id = ''; }    
-    $('#content-rev')[0].innerHTML = "<a href='javascript:;'>"+last_rev_id+"</a> | <a href='javascript:;'>" + next_rev_id+"</a>";
-  });
-
-
-});
-
-var autosaver;
-var form_contents;
-var old_form_contents     = $("#content").serialize();
-
-function Save()
-{
-  //console.log('save it');
-  old_form_contents     = $("#content").serialize();
-  $.botPost('/projects/update/'+web_link, $("#content").serialize(), function(data) {
-    if (data.rev_id) { updateRevID(data.rev_id); }
-  }, "json");
-}
-function updateRevID(rev_id)
-{
-  $('#content-rev a')[0].innerHTML = "Rev: " + rev_id;
-  latest_rev_id = rev_id;
-}
-*/
-</script>
-
-
-
-
-
-
-
-
-
-
 
 </div>
 <script type="text/javascript" src="/javascripts/project.js"></script>

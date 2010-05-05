@@ -36,7 +36,15 @@
 				
 			},1000 );    // wait 2 seconds after typing to save
 		});
-
+		
+		$(document).ready(function(){		
+			$('#windows-tabs a').click(function(e){
+				target = $(this).attr('href');
+				$('.window-pane:visible, #windows-tabs li.selected').removeClass('selected');
+				$('#'+target+', #windows-tabs li#tab-'+target).addClass('selected');
+				e.preventDefault();	
+			});
+		});
 		
 		return {
 			save : save,
