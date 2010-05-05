@@ -15,7 +15,7 @@
 			
 			$.post('/notes/new',{project_id:$('#project').attr('rel'),content:$('#content').val()},function(data){
 				if (data.note) {
-					$('form #update-save').html("Saved successfully at "+Date(data.note.created_at)).css({background: '#ffff99'}).animate({background:"#DDDDDD"},1000).delay(2000).fadeOut(1500);
+					$('form #update-save').html("Saved successfully at "+Date(data.note.created_at)).css({background: '#ffff99'}).animate({backgroundColor:"#DDDDDD"},1000).delay(2000).fadeOut(1500);
 					$('form #content-rev a').html("Rev: "+data.note.rev);
 				}
 			},'json');
