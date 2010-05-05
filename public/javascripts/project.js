@@ -1,4 +1,8 @@
 (function($){
+	
+	$.fn.loading = function() {
+		$(this).html('<img src="/images/loadingAnimation.gif" />')
+	}
 
 	$.project = function(){
 		
@@ -7,9 +11,11 @@
 		var save = function(e){
 			if (e&&e.preventDefault) { e.preventDefault(); }
 			
+			$('form #update-save').show().loading();
+			
 			$.post('/notes/new',{project_id:$('#project').attr('rel'),content:$('#content').val()},function(data){
 				if (data.note) {
-					$('form #update-save').html("Saved successfully at "+Date(data.note.created_at)).show().delay(2000).fadeOut(1500);
+					$('form #update-save').html("Saved successfully at "+Date(data.note.created_at)).css({background: '#ffff99'}).animate({background:"#DDDDDD"},1000).delay(2000).fadeOut(1500);
 					$('form #content-rev a').html("Rev: "+data.note.rev);
 				}
 			},'json');
