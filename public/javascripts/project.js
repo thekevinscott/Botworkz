@@ -34,7 +34,7 @@
 					$.project.save();
 				}
 				
-			},1000 );    // wait 2 seconds after typing to save
+			},2000 );    // wait 2 seconds after typing to save
 		});
 		
 		$(document).ready(function(){		
