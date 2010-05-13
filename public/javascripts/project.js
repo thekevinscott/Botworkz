@@ -9,6 +9,8 @@
 		var autosaver;
 		var old_form_contents = $('#content').val();
 		var save = function(e){
+			clearInterval($.project.autosaver);
+			
 			if (e&&e.preventDefault) { e.preventDefault(); }
 			
 			$('form #update-save').show().loading();
