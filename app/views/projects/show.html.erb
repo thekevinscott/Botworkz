@@ -11,34 +11,31 @@
 
 <div id="windows">
 	<ul id="windows-tabs">
-		<li id="tab-comments" class="selected"><a href="comments">Comments</a></li>
-		<li id="tab-hours"><a href="hours">Hours</a></li>
+		<% @project.panels.each do |panel| %>
+		<li id="tab-<%=panel.css_name%>" ><a href="<%=panel.css_name%>"><%=panel.title%></a></li>
+		<% end %>
+		
+		<li><a id="add-panel" href="#">+</a></li>		
 	</ul>
 	
 		
-		
+	<% @project.panels.each do |panel| %>
 	
 	
-	<div class="window-pane selected" id="comments">		
-
+		<div class="window-pane panel" id="<%= panel.css_name %>">
 		<form method="post" action="">
-		  <div id="content-rev"><a href="javascript:;">Rev: <%= @note.rev %></a></div>
-		  <div class="text-container"><textarea id="content" name="content" rows="20" cols="40"><%= @note.content %></textarea></div>
-		  <input type="submit" id="save" name="save" value="Save" class="submit" />
-		  <div id="update-save-container"><span id="update-save"></span></div>
-	  	</form>
+		  <div class="content-rev"><a href="javascript:;">Rev: <%= panel.notes.last.rev %></a></div>
+		  <div class="text-container"><textarea class="content" name="content" rows="20" cols="40"><%= panel.notes.last.content %></textarea></div>
+		  <input type="submit" name="save" value="Save" class="submit save" />
+		  <div class="update-save-container"><span class="update-save"></span></div>
+		</form>
 		<div class="clear"></div>
-	</div>
-	
-	
-	<div class="window-pane" id="hours">		
+		</div>
 
-		<form method="post" action="">
-		  <div class="text-container"><textarea id="content" name="content" rows="20" cols="40"></textarea></div>
-		  <input type="submit" id="save" name="save" value="Save" class="submit" />
-	  	</form>
-		<div class="clear"></div>
-	</div>	
+	<% end %>
+	
+	
+	
 </div>	
 
 </div>

@@ -199,7 +199,7 @@ h1 {
 #project input.submit {
   width: 150px;
 }
-#project #content-rev {
+#project .content-rev {
 background:#EEEEEE none repeat scroll 0 0;
 border-bottom:1px solid #DDD;
 color:#CCCCCC;
@@ -211,45 +211,11 @@ text-align:right;
 margin-top: 2px;
 width:640px;
 }
-#project #content-rev a { color: #CCC; }
-#project #content-rev a:hover {
+#project .content-rev a { color: #CCC; }
+#project .content-rev a:hover {
   background: transparent;
 }
 
-#timer { position: absolute; top: 28px; right: 20px; margin-left: -20px; }
-#timer #timer_button { 
-	width: 37px; 
-	height: 43px; 
-	background: url('/images/timer.png') 3px 0 no-repeat; 
-	cursor: pointer; 
-	display: block; 
-	padding: 0; 
-	margin-top: -20px;
-	float: right;
-}
-#timer #timer_button:hover { background: url('/images/timer.png') -35px 0 no-repeat; padding: 0;}
-#timer #timer_button.running { background: url('/images/timer.png') -74px 0 no-repeat; padding: 0;}
-#timer #timer_time {
-	float: left;
-}
-#manual_time {
-float:right;
-font-size:70%;
-margin-top:34px;
-text-align:right;
-width:50px;
-}
-#manual_time a {
-	width: 100%;
-}
-
-#times { margin-bottom: 30px; }
-#times hr { width: 230px; }
-#times div { display: inline;}
-#times li { cursor: pointer; padding: 3px; float: none; }
-#times li .content { display: none; }
-#times li:hover .info { background: #CCC; }
-#times li:hover .content { display: inline; }
 
 /* WINDOWS */
 .window-pane { display: none; clear: both; background: #DDD; padding: 12px 5px 5px 5px; min-height: 250px; border-bottom: 1px solid #EEE;}
@@ -259,31 +225,15 @@ width:50px;
 #windows #windows-tabs li a { color: #FFF; background: none; display: block; padding: 3px 5px;}
 #windows #windows-tabs li.selected, #windows #windows-tabs li.selected a, #windows #windows-tabs li a:hover { background: #DDD; color: black; }
 #windows { background: #666666; padding: 3px; border: 1px solid #333; }
+#windows #windows-tabs input {
+	height: 19px;
+	padding: 0;
+	float: left;
+	width: 200px;
+	margin: 0 0 0 10px;
+}
+#windows .pane; { display: none; }
 
-/* Time */
-
-#time ul {
-	margin: 15px 10px;
-}
-#time .date { 
-	font-size: 85%; 
-	width: 130px;
-}
-#time h1 { font-size: 30px; float: none; clear: both; margin-bottom: 30px; }
-#time h2 { 
-	float: left; 
-	border-bottom:2px solid #D3D9E9;
-	color:#000E4A;
-	display:inline;
-	font-size:20px;
-	text-shadow:-2px 2px 4px #6374AB;
-	margin-right: 15px;
-}
-#project #time li {
-	border-bottom:1px solid #BBB;
-	margin-bottom: 4px;
-	padding-bottom: 2px;
-}
 
 table {
 	width: 100%;
@@ -301,12 +251,12 @@ table th {
 	text-align: center;
 	background: #DDD;
 }
-#update-save {
+.update-save {
 	padding: 10px;
 	display: none;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
 }
-#update-save-container {
+.update-save-container {
 	padding-top: 15px;
 }

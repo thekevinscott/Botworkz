@@ -46,6 +46,17 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def addPanel
+    @user = User.find(session[:user_id])
+    @project = @user.projects.find_by_url(params[:id])
+    panel = @project.panels.new({:title => params[:panel]})
+    panel.save
+
+    respond_to do |format|
+      format.js  { render :json => panel }
+    end
+  end
+
   # GET /projects/1
   # GET /projects/1.xml
   def show
@@ -57,6 +68,7 @@ class ProjectsController < ApplicationController
     end
     
     @note = @project.notes.last
+
 
     respond_to do |format|
       format.html # show.html.erb
@@ -99,7 +111,8 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.save
         
-        @project.notes.new({:client_id => @client.id, :user_id => @user.id, :rev => 1 }).save
+
+        @project.panels.new({:title => 'comments', :project_id => self.id}).save
         
         
         flash[:notice] = 'Project was successfully created.'

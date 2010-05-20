@@ -8,6 +8,8 @@ ActionController::Routing::Routes.draw do |map|
   map.archived 'archived', :controller => 'projects', :action => 'archived'
   map.connect "projects/archived", :controller => "projects", :action => "archived"
   map.connect "projects/edit", :controller => "projects", :action => "edit"
+
+  map.connect "projects/:id/addPanel", :controller => "projects", :action => "addPanel"
   
   map.resources :sessions
 

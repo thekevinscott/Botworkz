@@ -27,9 +27,10 @@ class NotesController < ApplicationController
   def new
     @user = User.find(session[:user_id])
     @project = @user.projects.find(params[:project_id])
+    @panel = @project.panels.find_by_css_name(params[:panel])
     if ! @project.nil?
-      @rev = @project.notes.last.rev + 1
-      @note = @project.notes.new({ :content => params[:content], :rev => @rev })
+      @rev = @panel.notes.last.rev + 1
+      @note = @panel.notes.new({ :content => params[:content], :rev => @rev, :panel_id => @panel.id })
       @note.save
 
 
