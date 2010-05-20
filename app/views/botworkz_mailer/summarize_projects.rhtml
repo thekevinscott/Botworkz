@@ -1,1 +1,14 @@
 Hello, here is your daily summary of projects:
+
+<% @projects.each do |p| %>
+Project: <%= p.title %>
+
+<% p.panels.each do |panel| %>
+Panel: <%= panel.title %>
+Comments: <%= panel.notes.last.content %>
+
+<% end %>
+
+
+
+<% end %>
