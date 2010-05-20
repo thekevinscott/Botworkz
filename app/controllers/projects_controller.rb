@@ -60,6 +60,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.xml
   def show
+    BotworkzMailer.deliver_summarize_projects
     @user = User.find(session[:user_id])    
     
     @project = @user.projects.find_by_url(params[:id])
@@ -68,8 +69,6 @@ class ProjectsController < ApplicationController
     end
     
     if @project.panels.empty?
-      puts '**************************'
-      puts 'WE IN HERE1'
       panel = @project.panels.new({:title => 'comments'})
       panel.save
       note = @project.notes.last
@@ -79,8 +78,6 @@ class ProjectsController < ApplicationController
 
 
     end
-    
-    puts @project.id
     
 
 

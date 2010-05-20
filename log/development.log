@@ -19019,3 +19019,1790 @@ Processing ProjectsController#addPanel (for 127.0.0.1 at 2010-05-20 11:32:56) [P
   [4;36;1mNote Create (7.9ms)[0m   [0;1mINSERT INTO `notes` (`created_at`, `panel_id`, `project_id`, `rev`, `updated_at`, `client_id`, `user_id`, `content`) VALUES('2010-05-20 16:32:56', 73, NULL, 1, '2010-05-20 16:32:56', NULL, NULL, NULL)[0m
   [4;35;1mSQL (11.9ms)[0m   [0mCOMMIT[0m
 Completed in 278ms (View: 1, DB: 110) | 200 OK [http://localhost/projects/testers/addPanel]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-20 11:58:30) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (20.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.4ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+  [4;36;1mProject Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mClient Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.1ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 262ms (View: 87, DB: 27) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 11:58:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (39.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+NoMethodError (undefined method `summarize_projects' for BotworkzMailer:Class):
+  app/controllers/projects_controller.rb:63:in `show'
+
+Rendered rescues/_trace (107.4ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 11:59:45) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (35.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+NoMethodError (undefined method `summarize_projects' for BotworkzMailer:Class):
+  app/controllers/projects_controller.rb:63:in `show'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:00:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+NoMethodError (undefined method `summarize_projects' for BotworkzMailer:Class):
+  app/controllers/projects_controller.rb:63:in `show'
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:10:55 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+FUCK YOU
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:12:15 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+FUCK YOU
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:12:28 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+FUCK YOU
+  [4;35;1mProject Load (0.6ms)[0m   [0mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:14:12 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+FUCK YOU
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:14:15 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+FUCK YOU
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProject Load (0.4ms)[0m   [0mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:15:22 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+FUCK YOU
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:16:04 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+FUCK YOU
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2010-05-20 12:16:13) [GET]
+  Parameters: {"action"=>"index", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.5ms)[0m   [0mSELECT * FROM `projects` WHERE ( /*archive IS FALSE ||*/ archive IS NULL ) AND (`projects`.user_id = 1) [0m
+  [4;36;1mProject Columns (4.8ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+Rendering template within layouts/application
+Rendering projects/index
+  [4;35;1mClient Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.1ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+Completed in 171ms (View: 54, DB: 11) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:16:15) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (41.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+NoMethodError (undefined method `summarize_projects' for BotworkzMailer:Class):
+  app/controllers/projects_controller.rb:63:in `show'
+
+Rendered rescues/_trace (107.4ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:16:23) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (38.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:16:23 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+FUCK YOU
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (37.6ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mPanel Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `panels`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (2.1ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mPanel Load (0.3ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mNote Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mNote Load (2.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 999ms (View: 30, DB: 92) | 200 OK [http://localhost/projects/suck-it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:16:44) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (28.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (2.2ms)[0m   [0;1mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:16:44 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+FUCK YOU
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (4.3ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (3.6ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mPanel Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `panels`[0m
+  [4;35;1mSQL (39.0ms)[0m   [0mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.5ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mPanel Load (0.4ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Load (6.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 1146ms (View: 36, DB: 95) | 200 OK [http://localhost/projects/suck-it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:18:29) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (29.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (25.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` [0m
+  [4;35;1mProject Columns (20.9ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mPanel Load (0.6ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mPanel Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `panels`[0m
+  [4;36;1mNote Load (3.6ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mNote Columns (10.3ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mNote Load (0.7ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (1.9ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 19) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 25) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 71) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 29) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 30) [0m
+  [4;36;1mPanel Load (1.7ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 31) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 72) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Load (0.1ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 73) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (0.4ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 32) [0m
+  [4;36;1mPanel Load (1.0ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 33) [0m
+  [4;35;1mPanel Load (1.5ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 34) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 35) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 67) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 36) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 37) [0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 38) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 39) [0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 68) ORDER BY notes.id DESC LIMIT 1[0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:18:29 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+
+<h1>Suck it</h1><br />
+
+comments<br />
+Testing
+
+Rock it!
+
+
+Woot
+
+Rock
+
+OKay?
+
+Fine.
+
+Rock<br />
+
+<br />
+<br />
+
+<br /><br /><br />
+
+<h1>rock it out "BITHCES" what's up2</h1><br />
+
+<br /><br /><br />
+
+<h1>Rock it!</h1><br />
+
+comments<br />
+<br />
+
+<br /><br /><br />
+
+<h1>Rock it!</h1><br />
+
+<br /><br /><br />
+
+<h1>Rock it!</h1><br />
+
+<br /><br /><br />
+
+<h1>Testers</h1><br />
+
+comments<br />
+<br />
+
+<br />
+<br />
+
+<br /><br /><br />
+
+<h1>suck</h1><br />
+
+<br /><br /><br />
+
+<h1>rockers</h1><br />
+
+<br /><br /><br />
+
+<h1>rockers</h1><br />
+
+<br /><br /><br />
+
+<h1>poo</h1><br />
+
+comments<br />
+I HAVE CONTENT<br />
+
+<br /><br /><br />
+
+<h1>johnson</h1><br />
+
+<br /><br /><br />
+
+<h1>Ok then.</h1><br />
+
+<br /><br /><br />
+
+<h1>This is my big deal</h1><br />
+
+<br /><br /><br />
+
+<h1>Yet another damn project</h1><br />
+
+comments<br />
+<br />
+
+<br /><br /><br />
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (2.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.1ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 944ms (View: 11, DB: 110) | 200 OK [http://localhost/projects/suck-it]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:19:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;35;1mUser Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (44.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (1.1ms)[0m   [0mSELECT * FROM `projects` [0m
+  [4;36;1mProject Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mPanel Load (2.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;36;1mPanel Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `panels`[0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mNote Load (2.7ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 19) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 25) [0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 71) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 29) [0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 30) [0m
+  [4;35;1mPanel Load (1.0ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 31) [0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 72) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mNote Load (0.1ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 73) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 32) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 33) [0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 34) [0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 35) [0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 67) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 36) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 37) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 38) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 39) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 68) ORDER BY notes.id DESC LIMIT 1[0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:19:00 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+
+Suck it
+
+
+comments
+Testing
+
+Rock it!
+
+
+Woot
+
+Rock
+
+OKay?
+
+Fine.
+
+Rock
+
+
+
+
+
+
+
+
+
+
+rock it out "BITHCES" what's up2
+
+
+
+
+
+
+Rock it!
+
+
+comments
+
+
+
+
+
+
+
+Rock it!
+
+
+
+
+
+
+Rock it!
+
+
+
+
+
+
+Testers
+
+
+comments
+
+
+
+
+
+
+
+
+
+
+
+suck
+
+
+
+
+
+
+rockers
+
+
+
+
+
+
+rockers
+
+
+
+
+
+
+poo
+
+
+comments
+I HAVE CONTENT
+
+
+
+
+
+
+johnson
+
+
+
+
+
+
+Ok then.
+
+
+
+
+
+
+This is my big deal
+
+
+
+
+
+
+Yet another damn project
+
+
+comments
+
+
+
+
+
+
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (43.0ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 1207ms (View: 13, DB: 108) | 200 OK [http://localhost/projects/suck-it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:20:44) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (235.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` [0m
+  [4;35;1mProject Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mPanel Load (4.5ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mPanel Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `panels`[0m
+  [4;36;1mNote Load (3.9ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mNote Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mNote Load (0.5ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 19) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 25) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 71) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.3ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 29) [0m
+  [4;35;1mPanel Load (1.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 30) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 31) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 72) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 73) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 32) [0m
+  [4;36;1mPanel Load (0.4ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 33) [0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 34) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 35) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 67) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 36) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 37) [0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 38) [0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 39) [0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 68) ORDER BY notes.id DESC LIMIT 1[0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:20:44 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+
+Project: Suck it
+
+
+Panel: comments
+Comments: Testing
+
+Rock it!
+
+
+Woot
+
+Rock
+
+OKay?
+
+Fine.
+
+Rock
+
+
+Panel: 
+Comments: 
+
+
+
+
+
+
+Project: rock it out "BITHCES" what's up2
+
+
+
+
+
+
+Project: Rock it!
+
+
+Panel: comments
+Comments: 
+
+
+
+
+
+
+Project: Rock it!
+
+
+
+
+
+
+Project: Rock it!
+
+
+
+
+
+
+Project: Testers
+
+
+Panel: comments
+Comments: 
+
+
+Panel: 
+Comments: 
+
+
+
+
+
+
+Project: suck
+
+
+
+
+
+
+Project: rockers
+
+
+
+
+
+
+Project: rockers
+
+
+
+
+
+
+Project: poo
+
+
+Panel: comments
+Comments: I HAVE CONTENT
+
+
+
+
+
+
+Project: johnson
+
+
+
+
+
+
+Project: Ok then.
+
+
+
+
+
+
+Project: This is my big deal
+
+
+
+
+
+
+Project: Yet another damn project
+
+
+Panel: comments
+Comments: 
+
+
+
+
+
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (3.6ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (3.2ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 1660ms (View: 26, DB: 265) | 200 OK [http://localhost/projects/suck-it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:21:27) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (1.0ms)[0m   [0;1mSELECT * FROM `projects` [0m
+  [4;35;1mProject Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mPanel Load (0.3ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mPanel Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `panels`[0m
+  [4;36;1mNote Load (2.1ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mNote Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mNote Load (6.5ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (0.3ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 19) [0m
+  [4;36;1mPanel Load (1.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 25) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 71) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 29) [0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 30) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 31) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 72) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 73) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 32) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 33) [0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 34) [0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 35) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 67) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.3ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 36) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 37) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 38) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 39) [0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 68) ORDER BY notes.id DESC LIMIT 1[0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:21:28 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+
+Project: Suck it
+
+
+Panel: comments
+Comments: Testing
+
+Rock it!
+
+
+Woot
+
+Rock
+
+OKay?
+
+Fine.
+
+Rock
+
+
+Panel: 
+Comments: 
+
+
+
+
+
+
+Project: rock it out "BITHCES" what's up2
+
+
+
+
+
+
+Project: Rock it!
+
+
+Panel: comments
+Comments: 
+
+
+
+
+
+
+Project: Rock it!
+
+
+
+
+
+
+Project: Rock it!
+
+
+
+
+
+
+Project: Testers
+
+
+Panel: comments
+Comments: 
+
+
+Panel: 
+Comments: 
+
+
+
+
+
+
+Project: suck
+
+
+
+
+
+
+Project: rockers
+
+
+
+
+
+
+Project: rockers
+
+
+
+
+
+
+Project: poo
+
+
+Panel: comments
+Comments: I HAVE CONTENT
+
+
+
+
+
+
+Project: johnson
+
+
+
+
+
+
+Project: Ok then.
+
+
+
+
+
+
+Project: This is my big deal
+
+
+
+
+
+
+Project: Yet another damn project
+
+
+Panel: comments
+Comments: 
+
+
+
+
+
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (40.7ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 1181ms (View: 27, DB: 65) | 200 OK [http://localhost/projects/suck-it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:21:51) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (27.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.8ms)[0m   [0;1mSELECT * FROM `projects` [0m
+  [4;35;1mProject Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mPanel Load (1.0ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mPanel Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `panels`[0m
+  [4;36;1mNote Load (0.5ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mNote Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mNote Load (3.1ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 19) [0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 25) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 71) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.3ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 29) [0m
+  [4;35;1mPanel Load (0.3ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 30) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 31) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 72) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 73) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 32) [0m
+  [4;36;1mPanel Load (1.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 33) [0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 34) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 35) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 67) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 36) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 37) [0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 38) [0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 39) [0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 68) ORDER BY notes.id DESC LIMIT 1[0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:21:51 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+
+Project: Suck it
+
+
+Panel: comments
+Comments: Testing
+
+Rock it!
+
+
+Woot
+
+Rock
+
+OKay?
+
+Fine.
+
+Rock
+
+
+Panel: 
+Comments: 
+
+
+
+
+
+
+Project: rock it out "BITHCES" what's up2
+
+
+
+
+
+
+Project: Rock it!
+
+
+Panel: comments
+Comments: 
+
+
+
+
+
+
+Project: Rock it!
+
+
+
+
+
+
+Project: Rock it!
+
+
+
+
+
+
+Project: Testers
+
+
+Panel: comments
+Comments: 
+
+
+Panel: 
+Comments: 
+
+
+
+
+
+
+Project: suck
+
+
+
+
+
+
+Project: rockers
+
+
+
+
+
+
+Project: rockers
+
+
+
+
+
+
+Project: poo
+
+
+Panel: comments
+Comments: I HAVE CONTENT
+
+
+
+
+
+
+Project: johnson
+
+
+
+
+
+
+Project: Ok then.
+
+
+
+
+
+
+Project: This is my big deal
+
+
+
+
+
+
+Project: Yet another damn project
+
+
+Panel: comments
+Comments: 
+
+
+
+
+
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (1.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (14.4ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (86.1ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 1095ms (View: 30, DB: 149) | 200 OK [http://localhost/projects/suck-it]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:22:21) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;35;1mUser Columns (132.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.5ms)[0m   [0mSELECT * FROM `projects` [0m
+  [4;36;1mProject Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mPanel Load (2.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;36;1mPanel Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `panels`[0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mNote Load (2.1ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 19) [0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 25) [0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 71) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 29) [0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 30) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 31) [0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 72) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mNote Load (0.1ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 73) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 32) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 33) [0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 34) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 35) [0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 67) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (3.9ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 36) [0m
+  [4;36;1mPanel Load (0.8ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 37) [0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 38) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 39) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 68) ORDER BY notes.id DESC LIMIT 1[0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:22:21 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+
+Project: Suck it
+
+
+Panel: comments
+Comments: Testing
+
+Rock it!
+
+
+Woot
+
+Rock
+
+OKay?
+
+Fine.
+
+Rock
+
+
+Panel: 
+Comments: 
+
+
+
+
+
+
+Project: rock it out "BITHCES" what's up2
+
+
+
+
+
+
+Project: Rock it!
+
+
+Panel: comments
+Comments: 
+
+
+
+
+
+
+Project: Rock it!
+
+
+
+
+
+
+Project: Rock it!
+
+
+
+
+
+
+Project: Testers
+
+
+Panel: comments
+Comments: 
+
+
+Panel: 
+Comments: 
+
+
+
+
+
+
+Project: suck
+
+
+
+
+
+
+Project: rockers
+
+
+
+
+
+
+Project: rockers
+
+
+
+
+
+
+Project: poo
+
+
+Panel: comments
+Comments: I HAVE CONTENT
+
+
+
+
+
+
+Project: johnson
+
+
+
+
+
+
+Project: Ok then.
+
+
+
+
+
+
+Project: This is my big deal
+
+
+
+
+
+
+Project: Yet another damn project
+
+
+Panel: comments
+Comments: 
+
+
+
+
+
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (36.4ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 1386ms (View: 11, DB: 194) | 200 OK [http://localhost/projects/suck-it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:22:30) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (37.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.9ms)[0m   [0;1mSELECT * FROM `projects` [0m
+  [4;35;1mProject Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mPanel Load (0.3ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mPanel Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `panels`[0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mNote Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mNote Load (0.4ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 19) [0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 25) [0m
+  [4;35;1mNote Load (0.2ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 71) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 29) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 30) [0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 31) [0m
+  [4;35;1mNote Load (0.3ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 72) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Load (0.2ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 73) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 32) [0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 33) [0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 34) [0m
+  [4;36;1mPanel Load (0.3ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 35) [0m
+  [4;35;1mNote Load (0.9ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 67) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mPanel Load (0.2ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 36) [0m
+  [4;35;1mPanel Load (0.1ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 37) [0m
+  [4;36;1mPanel Load (0.1ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 38) [0m
+  [4;35;1mPanel Load (0.2ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 39) [0m
+  [4;36;1mNote Load (0.3ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 68) ORDER BY notes.id DESC LIMIT 1[0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:22:30 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+
+
+Project: Suck it
+
+
+Panel: comments
+Comments: Testing
+
+Rock it!
+
+
+Woot
+
+Rock
+
+OKay?
+
+Fine.
+
+Rock
+
+
+Panel: 
+Comments: 
+
+
+
+
+
+
+Project: rock it out "BITHCES" what's up2
+
+
+
+
+
+
+Project: Rock it!
+
+
+Panel: comments
+Comments: 
+
+
+
+
+
+
+Project: Rock it!
+
+
+
+
+
+
+Project: Rock it!
+
+
+
+
+
+
+Project: Testers
+
+
+Panel: comments
+Comments: 
+
+
+Panel: 
+Comments: 
+
+
+
+
+
+
+Project: suck
+
+
+
+
+
+
+Project: rockers
+
+
+
+
+
+
+Project: rockers
+
+
+
+
+
+
+Project: poo
+
+
+Panel: comments
+Comments: I HAVE CONTENT
+
+
+
+
+
+
+Project: johnson
+
+
+
+
+
+
+Project: Ok then.
+
+
+
+
+
+
+Project: This is my big deal
+
+
+
+
+
+
+Project: Yet another damn project
+
+
+Panel: comments
+Comments: 
+
+
+
+
+
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.5ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 856ms (View: 11, DB: 54) | 200 OK [http://localhost/projects/suck-it]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:22:47) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (100.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Load (0.4ms)[0m   [0mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:22:47 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mProject Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `projects`[0m
+  [4;36;1mProject Load (2.3ms)[0m   [0;1mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;35;1mPanel Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `panels`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;35;1mClient Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `clients`[0m
+  [4;36;1mClient Load (1.6ms)[0m   [0;1mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;35;1mPanel Load (0.3ms)[0m   [0mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;36;1mNote Load (0.6ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mNote Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `notes`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mNote Load (2.8ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 1096ms (View: 100, DB: 121) | 200 OK [http://localhost/projects/suck-it]
+  [4;36;1mSQL (2.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:22:56) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (26.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.3ms)[0m   [0;1mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:22:56 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (39.1ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mPanel Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `panels`[0m
+  [4;35;1mSQL (3.4ms)[0m   [0mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (1.8ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mPanel Load (0.3ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Load (3.1ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 1959ms (View: 34, DB: 89) | 200 OK [http://localhost/projects/suck-it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:23:16) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (388.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (11.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:23:17 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (42.3ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mPanel Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `panels`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.1ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mPanel Load (0.3ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mNote Load (0.4ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Load (2.0ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 1479ms (View: 35, DB: 456) | 200 OK [http://localhost/projects/suck-it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:24:19) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (28.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.4ms)[0m   [0;1mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:24:19 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (0.6ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mPanel Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `panels`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (9.0ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.1ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mPanel Load (0.6ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mNote Load (0.5ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Load (2.1ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 945ms (View: 34, DB: 54) | 200 OK [http://localhost/projects/suck-it]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2010-05-20 12:25:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"suck-it", "controller"=>"projects"}
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Load (0.5ms)[0m   [0;1mSELECT * FROM `projects` [0m
+Sent mail to thekevinscott@gmail.com
+
+Date: Thu, 20 May 2010 12:25:24 -0500
+From: botworkz@gmail.com
+To: thekevinscott@gmail.com
+Subject: Your daily summary of projects
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Hello, here is your daily summary of projects:
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mProject Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `projects`[0m
+  [4;35;1mProject Load (67.9ms)[0m   [0mSELECT * FROM `projects` WHERE (`projects`.`url` = 'suck-it') AND (`projects`.user_id = 1) LIMIT 1[0m
+  [4;36;1mPanel Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `panels`[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSELECT count(*) AS count_all FROM `panels` WHERE (`panels`.project_id = 14) [0m
+Rendering template within layouts/application
+Rendering projects/show
+  [4;36;1mClient Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `clients`[0m
+  [4;35;1mClient Load (2.1ms)[0m   [0mSELECT * FROM `clients` WHERE (`clients`.`id` = 2) [0m
+  [4;36;1mPanel Load (1.4ms)[0m   [0;1mSELECT * FROM `panels` WHERE (`panels`.project_id = 14) [0m
+  [4;35;1mNote Load (1.1ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `notes`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 69) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;36;1mNote Load (3.4ms)[0m   [0;1mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `notes` WHERE (`notes`.panel_id = 70) ORDER BY notes.id DESC LIMIT 1[0m
+Completed in 1103ms (View: 25, DB: 90) | 200 OK [http://localhost/projects/suck-it]
