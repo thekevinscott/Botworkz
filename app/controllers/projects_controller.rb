@@ -67,7 +67,21 @@ class ProjectsController < ApplicationController
       @project = @user.projects.find(params[:id])
     end
     
-    @note = @project.notes.last
+    if @project.panels.empty?
+      puts '**************************'
+      puts 'WE IN HERE1'
+      panel = @project.panels.new({:title => 'comments'})
+      panel.save
+      note = @project.notes.last
+      
+      new_note = panel.notes.new({:content => note.content, :rev => note.rev})
+      new_note.save
+
+
+    end
+    
+    puts @project.id
+    
 
 
     respond_to do |format|
