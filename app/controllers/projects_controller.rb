@@ -26,11 +26,11 @@ class ProjectsController < ApplicationController
     @user = User.find(session[:user_id])    
 
     @project = @user.projects.find_by_url(params[:id])
-    @project.archive = false
+    @project.archive = nil
     
     if @project.save
       
-      #flash[:notice] = 'Project was successfully archived.'
+      #flash[:notice] = 'Project was successfully unarchived.'
       respond_to do |format|
       
         format.html { redirect_to('/') }
